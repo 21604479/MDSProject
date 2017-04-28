@@ -27,5 +27,11 @@ namespace MDSProject
             CancelForm cancel = new CancelForm();
             cancel.ShowDialog();
         }
+
+        private void buttonRegistDoctor_Click(object sender, EventArgs e)
+        {
+            RegisterDoctorForm regDoc = new RegisterDoctorForm();
+            regDoc.ShowDialog();
+        }
     }
 }

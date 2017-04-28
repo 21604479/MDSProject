@@ -27,6 +27,7 @@ namespace MDSProject
         {
             NewAppointementForm appointment = new NewAppointementForm();
             appointment.ShowDialog();
+            
         }
 
         private void buttonRegistDoctor_Click(object sender, EventArgs e)

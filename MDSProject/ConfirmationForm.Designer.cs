@@ -38,35 +38,39 @@
             // 
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.Location = new System.Drawing.Point(166, 9);
+            this.labelTitle.Location = new System.Drawing.Point(124, 7);
+            this.labelTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(122, 25);
+            this.labelTitle.Size = new System.Drawing.Size(99, 20);
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "Confirmation";
             // 
             // labelMessage
             // 
             this.labelMessage.AutoSize = true;
-            this.labelMessage.Location = new System.Drawing.Point(105, 75);
+            this.labelMessage.Location = new System.Drawing.Point(79, 61);
+            this.labelMessage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelMessage.Name = "labelMessage";
-            this.labelMessage.Size = new System.Drawing.Size(259, 17);
+            this.labelMessage.Size = new System.Drawing.Size(198, 13);
             this.labelMessage.TabIndex = 1;
             this.labelMessage.Text = "Do tou want to cancel the Appointment?";
             // 
             // buttonCancelAppointment
             // 
-            this.buttonCancelAppointment.Location = new System.Drawing.Point(65, 145);
+            this.buttonCancelAppointment.Location = new System.Drawing.Point(49, 118);
+            this.buttonCancelAppointment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonCancelAppointment.Name = "buttonCancelAppointment";
-            this.buttonCancelAppointment.Size = new System.Drawing.Size(154, 36);
+            this.buttonCancelAppointment.Size = new System.Drawing.Size(116, 29);
             this.buttonCancelAppointment.TabIndex = 2;
             this.buttonCancelAppointment.Text = "Cancel Appointment";
             this.buttonCancelAppointment.UseVisualStyleBackColor = true;
             // 
             // buttonReturn
             // 
-            this.buttonReturn.Location = new System.Drawing.Point(249, 145);
+            this.buttonReturn.Location = new System.Drawing.Point(187, 118);
+            this.buttonReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonReturn.Name = "buttonReturn";
-            this.buttonReturn.Size = new System.Drawing.Size(154, 36);
+            this.buttonReturn.Size = new System.Drawing.Size(116, 29);
             this.buttonReturn.TabIndex = 3;
             this.buttonReturn.Text = "Cancel";
             this.buttonReturn.UseVisualStyleBackColor = true;
@@ -74,15 +78,16 @@
             // 
             // ConfirmationForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(462, 210);
+            this.ClientSize = new System.Drawing.Size(346, 171);
             this.Controls.Add(this.buttonReturn);
             this.Controls.Add(this.buttonCancelAppointment);
             this.Controls.Add(this.labelMessage);
             this.Controls.Add(this.labelTitle);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ConfirmationForm";
-            this.Text = "ConfirmationForm";
+            this.Text = "Confirmation";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -62,6 +62,7 @@
             this.buttonSelectDoctor.TabIndex = 6;
             this.buttonSelectDoctor.Text = "Select Doctor";
             this.buttonSelectDoctor.UseVisualStyleBackColor = true;
+            this.buttonSelectDoctor.Click += new System.EventHandler(this.buttonSelectDoctor_Click);
             // 
             // buttonSelectDate
             // 

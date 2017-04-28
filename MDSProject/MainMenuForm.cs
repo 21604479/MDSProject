@@ -17,21 +17,16 @@ namespace MDSProject
             InitializeComponent();
         }
 
-        private void MainMenu_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             CancelForm cancel = new CancelForm();
             cancel.ShowDialog();
         }
 
-        private void buttonRegistDoctor_Click(object sender, EventArgs e)
+        private void buttonCreate_Click(object sender, EventArgs e)
         {
-            RegisterDoctorForm regDoc = new RegisterDoctorForm();
-            regDoc.ShowDialog();
+            NewAppointementForm appointment = new NewAppointementForm();
+            appointment.ShowDialog();
         }
     }
 }

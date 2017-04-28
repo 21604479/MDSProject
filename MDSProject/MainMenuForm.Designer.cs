@@ -99,7 +99,6 @@
             this.buttonRegistDoctor.TabIndex = 5;
             this.buttonRegistDoctor.Text = "Register Doctor";
             this.buttonRegistDoctor.UseVisualStyleBackColor = true;
-            this.buttonRegistDoctor.Click += new System.EventHandler(this.buttonRegistDoctor_Click);
             // 
             // buttonManage
             // 
@@ -126,7 +125,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainMenuForm";
             this.Text = "Main Menu";
-            this.Load += new System.EventHandler(this.MainMenu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

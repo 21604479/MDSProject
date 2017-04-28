@@ -35,5 +35,10 @@ namespace MDSProject
             RegisterDoctorForm regDoc = new RegisterDoctorForm();
             regDoc.ShowDialog();
         }
+
+        private void buttonRegisterConsult_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

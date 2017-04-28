@@ -85,9 +85,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AppointmentDetailsForm.resx">
-      <DependentUpon>AppointmentDetailsForm.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="RegisterDoctorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterDoctorForm.Designer.cs">
+      <DependentUpon>RegisterDoctorForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CancelForm.resx">
       <DependentUpon>CancelForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,6 +115,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RegisterDoctorForm.resx">
+      <DependentUpon>RegisterDoctorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

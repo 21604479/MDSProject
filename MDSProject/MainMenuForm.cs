@@ -28,10 +28,10 @@ namespace MDSProject
             cancel.ShowDialog();
         }
 
-        private void buttonCreate_Click(object sender, EventArgs e)
+        private void buttonRegistDoctor_Click(object sender, EventArgs e)
         {
-            NewAppointementForm appointment = new NewAppointementForm();
-            appointment.ShowDialog();
+            RegisterDoctorForm regDoc = new RegisterDoctorForm();
+            regDoc.ShowDialog();
         }
     }
 }

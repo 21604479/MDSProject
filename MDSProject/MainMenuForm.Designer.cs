@@ -99,6 +99,7 @@
             this.buttonRegistDoctor.TabIndex = 5;
             this.buttonRegistDoctor.Text = "Register Doctor";
             this.buttonRegistDoctor.UseVisualStyleBackColor = true;
+            this.buttonRegistDoctor.Click += new System.EventHandler(this.buttonRegistDoctor_Click);
             // 
             // buttonManage
             // 

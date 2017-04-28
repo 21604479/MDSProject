@@ -19,6 +19,7 @@ namespace MDSProject
 
         private void buttonSelectDoctor_Click(object sender, EventArgs e)
         {
+            //labelDoctorsName.Text = listBoxRegisteredDoctors.SelectedItem.ToString();
             this.Close();
         }
 

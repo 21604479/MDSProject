@@ -40,7 +40,7 @@
             // buttonCreate
             // 
             this.buttonCreate.Location = new System.Drawing.Point(114, 78);
-            this.buttonCreate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonCreate.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCreate.Name = "buttonCreate";
             this.buttonCreate.Size = new System.Drawing.Size(137, 28);
             this.buttonCreate.TabIndex = 0;
@@ -51,7 +51,7 @@
             // buttonCancel
             // 
             this.buttonCancel.Location = new System.Drawing.Point(114, 129);
-            this.buttonCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(137, 28);
             this.buttonCancel.TabIndex = 1;
@@ -62,7 +62,7 @@
             // buttonReschedule
             // 
             this.buttonReschedule.Location = new System.Drawing.Point(114, 182);
-            this.buttonReschedule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonReschedule.Margin = new System.Windows.Forms.Padding(2);
             this.buttonReschedule.Name = "buttonReschedule";
             this.buttonReschedule.Size = new System.Drawing.Size(137, 28);
             this.buttonReschedule.TabIndex = 2;
@@ -72,7 +72,7 @@
             // buttonRegisterConsult
             // 
             this.buttonRegisterConsult.Location = new System.Drawing.Point(114, 236);
-            this.buttonRegisterConsult.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonRegisterConsult.Margin = new System.Windows.Forms.Padding(2);
             this.buttonRegisterConsult.Name = "buttonRegisterConsult";
             this.buttonRegisterConsult.Size = new System.Drawing.Size(137, 28);
             this.buttonRegisterConsult.TabIndex = 3;
@@ -93,7 +93,7 @@
             // buttonRegistDoctor
             // 
             this.buttonRegistDoctor.Location = new System.Drawing.Point(114, 286);
-            this.buttonRegistDoctor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonRegistDoctor.Margin = new System.Windows.Forms.Padding(2);
             this.buttonRegistDoctor.Name = "buttonRegistDoctor";
             this.buttonRegistDoctor.Size = new System.Drawing.Size(137, 28);
             this.buttonRegistDoctor.TabIndex = 5;
@@ -104,7 +104,7 @@
             // buttonManage
             // 
             this.buttonManage.Location = new System.Drawing.Point(114, 340);
-            this.buttonManage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonManage.Margin = new System.Windows.Forms.Padding(2);
             this.buttonManage.Name = "buttonManage";
             this.buttonManage.Size = new System.Drawing.Size(137, 28);
             this.buttonManage.TabIndex = 6;
@@ -123,7 +123,7 @@
             this.Controls.Add(this.buttonReschedule);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonCreate);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainMenuForm";
             this.Text = "Main Menu";
             this.Load += new System.EventHandler(this.MainMenu_Load);

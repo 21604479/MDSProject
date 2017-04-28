@@ -25,7 +25,7 @@ namespace MDSProject
         private void buttonCancelAppointment_Click(object sender, EventArgs e)
         {
 
-            if ()
+            if (true)
             {
                 Close();
                 ErrorMessageForm errorMessage = new ErrorMessageForm();

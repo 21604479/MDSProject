@@ -27,5 +27,11 @@ namespace MDSProject
             CancelForm cancel = new CancelForm();
             cancel.ShowDialog();
         }
+
+        private void buttonCreate_Click(object sender, EventArgs e)
+        {
+            NewAppointementForm appointment = new NewAppointementForm();
+            appointment.ShowDialog();
+        }
     }
 }

@@ -39,10 +39,10 @@
             // 
             // buttonCreate
             // 
-            this.buttonCreate.Location = new System.Drawing.Point(114, 78);
+            this.buttonCreate.Location = new System.Drawing.Point(109, 78);
             this.buttonCreate.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(137, 28);
+            this.buttonCreate.Size = new System.Drawing.Size(155, 28);
             this.buttonCreate.TabIndex = 0;
             this.buttonCreate.Text = "New Appointment";
             this.buttonCreate.UseVisualStyleBackColor = true;
@@ -50,10 +50,10 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(114, 129);
+            this.buttonCancel.Location = new System.Drawing.Point(109, 129);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(137, 28);
+            this.buttonCancel.Size = new System.Drawing.Size(155, 28);
             this.buttonCancel.TabIndex = 1;
             this.buttonCancel.Text = "Cancel Appointment";
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -61,23 +61,24 @@
             // 
             // buttonReschedule
             // 
-            this.buttonReschedule.Location = new System.Drawing.Point(114, 182);
+            this.buttonReschedule.Location = new System.Drawing.Point(109, 182);
             this.buttonReschedule.Margin = new System.Windows.Forms.Padding(2);
             this.buttonReschedule.Name = "buttonReschedule";
-            this.buttonReschedule.Size = new System.Drawing.Size(137, 28);
+            this.buttonReschedule.Size = new System.Drawing.Size(155, 28);
             this.buttonReschedule.TabIndex = 2;
             this.buttonReschedule.Text = "Reschedule Appointment";
             this.buttonReschedule.UseVisualStyleBackColor = true;
             // 
             // buttonRegisterConsult
             // 
-            this.buttonRegisterConsult.Location = new System.Drawing.Point(114, 236);
+            this.buttonRegisterConsult.Location = new System.Drawing.Point(109, 236);
             this.buttonRegisterConsult.Margin = new System.Windows.Forms.Padding(2);
             this.buttonRegisterConsult.Name = "buttonRegisterConsult";
-            this.buttonRegisterConsult.Size = new System.Drawing.Size(137, 28);
+            this.buttonRegisterConsult.Size = new System.Drawing.Size(155, 28);
             this.buttonRegisterConsult.TabIndex = 3;
             this.buttonRegisterConsult.Text = "Register Consultation Details";
             this.buttonRegisterConsult.UseVisualStyleBackColor = true;
+            this.buttonRegisterConsult.Click += new System.EventHandler(this.buttonRegisterConsult_Click);
             // 
             // labelTitle
             // 
@@ -92,10 +93,10 @@
             // 
             // buttonRegistDoctor
             // 
-            this.buttonRegistDoctor.Location = new System.Drawing.Point(114, 286);
+            this.buttonRegistDoctor.Location = new System.Drawing.Point(109, 286);
             this.buttonRegistDoctor.Margin = new System.Windows.Forms.Padding(2);
             this.buttonRegistDoctor.Name = "buttonRegistDoctor";
-            this.buttonRegistDoctor.Size = new System.Drawing.Size(137, 28);
+            this.buttonRegistDoctor.Size = new System.Drawing.Size(155, 28);
             this.buttonRegistDoctor.TabIndex = 5;
             this.buttonRegistDoctor.Text = "Register Doctor";
             this.buttonRegistDoctor.UseVisualStyleBackColor = true;
@@ -103,12 +104,12 @@
             // 
             // buttonManage
             // 
-            this.buttonManage.Location = new System.Drawing.Point(114, 340);
+            this.buttonManage.Location = new System.Drawing.Point(109, 340);
             this.buttonManage.Margin = new System.Windows.Forms.Padding(2);
             this.buttonManage.Name = "buttonManage";
-            this.buttonManage.Size = new System.Drawing.Size(137, 28);
+            this.buttonManage.Size = new System.Drawing.Size(155, 28);
             this.buttonManage.TabIndex = 6;
-            this.buttonManage.Text = "Manage Prof Ciencies";
+            this.buttonManage.Text = "Manage Proficiencies";
             this.buttonManage.UseVisualStyleBackColor = true;
             // 
             // MainMenuForm

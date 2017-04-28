@@ -31,6 +31,10 @@
             this.labelTitle = new System.Windows.Forms.Label();
             this.buttonCancelAppointment = new System.Windows.Forms.Button();
             this.buttonReturn = new System.Windows.Forms.Button();
+            this.labelDate = new System.Windows.Forms.Label();
+            this.labelHour = new System.Windows.Forms.Label();
+            this.labelDoctorName = new System.Windows.Forms.Label();
+            this.labelPacientName = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelTitle
@@ -64,11 +68,51 @@
             this.buttonReturn.UseVisualStyleBackColor = true;
             this.buttonReturn.Click += new System.EventHandler(this.button2_Click);
             // 
+            // labelDate
+            // 
+            this.labelDate.AutoSize = true;
+            this.labelDate.Location = new System.Drawing.Point(12, 66);
+            this.labelDate.Name = "labelDate";
+            this.labelDate.Size = new System.Drawing.Size(46, 17);
+            this.labelDate.TabIndex = 3;
+            this.labelDate.Text = "label1";
+            // 
+            // labelHour
+            // 
+            this.labelHour.AutoSize = true;
+            this.labelHour.Location = new System.Drawing.Point(12, 118);
+            this.labelHour.Name = "labelHour";
+            this.labelHour.Size = new System.Drawing.Size(46, 17);
+            this.labelHour.TabIndex = 4;
+            this.labelHour.Text = "label2";
+            // 
+            // labelDoctorName
+            // 
+            this.labelDoctorName.AutoSize = true;
+            this.labelDoctorName.Location = new System.Drawing.Point(12, 171);
+            this.labelDoctorName.Name = "labelDoctorName";
+            this.labelDoctorName.Size = new System.Drawing.Size(46, 17);
+            this.labelDoctorName.TabIndex = 5;
+            this.labelDoctorName.Text = "label3";
+            // 
+            // labelPacientName
+            // 
+            this.labelPacientName.AutoSize = true;
+            this.labelPacientName.Location = new System.Drawing.Point(12, 220);
+            this.labelPacientName.Name = "labelPacientName";
+            this.labelPacientName.Size = new System.Drawing.Size(46, 17);
+            this.labelPacientName.TabIndex = 6;
+            this.labelPacientName.Text = "label4";
+            // 
             // AppointmentDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(336, 334);
+            this.Controls.Add(this.labelPacientName);
+            this.Controls.Add(this.labelDoctorName);
+            this.Controls.Add(this.labelHour);
+            this.Controls.Add(this.labelDate);
             this.Controls.Add(this.buttonReturn);
             this.Controls.Add(this.buttonCancelAppointment);
             this.Controls.Add(this.labelTitle);
@@ -84,5 +128,9 @@
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Button buttonCancelAppointment;
         private System.Windows.Forms.Button buttonReturn;
+        private System.Windows.Forms.Label labelDate;
+        private System.Windows.Forms.Label labelHour;
+        private System.Windows.Forms.Label labelDoctorName;
+        private System.Windows.Forms.Label labelPacientName;
     }
 }

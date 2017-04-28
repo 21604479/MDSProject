@@ -25,7 +25,7 @@ namespace MDSProject
         private void buttonCancelAppointment_Click(object sender, EventArgs e)
         {
 
-            if ()
+           /* if ()
             {
                 Close();
                 ErrorMessageForm errorMessage = new ErrorMessageForm();
@@ -34,7 +34,7 @@ namespace MDSProject
             {
                 Close();
                 ConfirmationForm confirmation = new ConfirmationForm();
-            }
+            }*/
 
             
         }

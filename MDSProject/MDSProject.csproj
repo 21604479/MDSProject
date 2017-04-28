@@ -85,6 +85,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterDoctorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterDoctorForm.Designer.cs">
+      <DependentUpon>RegisterDoctorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SelectDoctorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RegisterDoctorForm.resx">
+      <DependentUpon>RegisterDoctorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SelectDoctorForm.resx">
       <DependentUpon>SelectDoctorForm.cs</DependentUpon>
     </EmbeddedResource>

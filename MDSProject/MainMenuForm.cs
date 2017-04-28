@@ -26,13 +26,24 @@ namespace MDSProject
         private void buttonCreate_Click(object sender, EventArgs e)
         {
             NewAppointementForm appointment = new NewAppointementForm();
-            appointment.ShowDialog();
+            appointment.Show();
+            this.Hide();
         }
 
         private void buttonRegistDoctor_Click(object sender, EventArgs e)
         {
             RegisterDoctorForm regDoc = new RegisterDoctorForm();
             regDoc.ShowDialog();
+        }
+
+        private void buttonRegisterConsult_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSair_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

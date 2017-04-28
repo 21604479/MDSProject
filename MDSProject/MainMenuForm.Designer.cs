@@ -35,6 +35,7 @@
             this.labelTitle = new System.Windows.Forms.Label();
             this.buttonRegistDoctor = new System.Windows.Forms.Button();
             this.buttonManage = new System.Windows.Forms.Button();
+            this.buttonSair = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonCreate
@@ -112,11 +113,23 @@
             this.buttonManage.Text = "Manage Proficiencies";
             this.buttonManage.UseVisualStyleBackColor = true;
             // 
+            // buttonSair
+            // 
+            this.buttonSair.Location = new System.Drawing.Point(109, 393);
+            this.buttonSair.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSair.Name = "buttonSair";
+            this.buttonSair.Size = new System.Drawing.Size(155, 28);
+            this.buttonSair.TabIndex = 7;
+            this.buttonSair.Text = "Exit";
+            this.buttonSair.UseVisualStyleBackColor = true;
+            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
+            // 
             // MainMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(381, 395);
+            this.ClientSize = new System.Drawing.Size(381, 445);
+            this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.buttonManage);
             this.Controls.Add(this.buttonRegistDoctor);
             this.Controls.Add(this.labelTitle);
@@ -141,6 +154,7 @@
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Button buttonRegistDoctor;
         private System.Windows.Forms.Button buttonManage;
+        private System.Windows.Forms.Button buttonSair;
     }
 }
 

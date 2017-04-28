@@ -72,6 +72,7 @@
             this.buttonSelectDate.TabIndex = 7;
             this.buttonSelectDate.Text = "Select Date";
             this.buttonSelectDate.UseVisualStyleBackColor = true;
+            this.buttonSelectDate.Click += new System.EventHandler(this.buttonSelectDate_Click);
             // 
             // buttonConfirm
             // 
@@ -81,6 +82,7 @@
             this.buttonConfirm.TabIndex = 8;
             this.buttonConfirm.Text = "Confirm";
             this.buttonConfirm.UseVisualStyleBackColor = true;
+            this.buttonConfirm.Click += new System.EventHandler(this.buttonConfirm_Click);
             // 
             // buttonCancel
             // 
@@ -90,6 +92,7 @@
             this.buttonCancel.TabIndex = 8;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // labelDoctorsName
             // 

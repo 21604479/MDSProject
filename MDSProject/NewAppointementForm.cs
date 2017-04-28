@@ -22,5 +22,20 @@ namespace MDSProject
             SelectDoctorForm selectdoctor = new SelectDoctorForm();
             selectdoctor.ShowDialog();
         }
+
+        private void buttonSelectDate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonConfirm_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

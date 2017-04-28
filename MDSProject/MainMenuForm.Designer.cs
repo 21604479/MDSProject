@@ -46,7 +46,7 @@
             this.buttonCreate.TabIndex = 0;
             this.buttonCreate.Text = "New Appointment";
             this.buttonCreate.UseVisualStyleBackColor = true;
-            this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
+//            this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
             // 
             // buttonCancel
             // 

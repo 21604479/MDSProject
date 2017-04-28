@@ -17,11 +17,6 @@ namespace MDSProject
             InitializeComponent();
         }
 
-        private void MainMenu_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             CancelForm cancel = new CancelForm();

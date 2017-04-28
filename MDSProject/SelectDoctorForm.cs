@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace MDSProject
 {
-    public partial class NewAppointementForm : Form
+    public partial class SelectDoctorForm : Form
     {
-        public NewAppointementForm()
+        public SelectDoctorForm()
         {
             InitializeComponent();
-        }
-
-        private void buttonSelectDoctor_Click(object sender, EventArgs e)
-        {
-            SelectDoctorForm selectdoctor = new SelectDoctorForm();
-            selectdoctor.ShowDialog();
         }
     }
 }

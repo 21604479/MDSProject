@@ -17,9 +17,19 @@ namespace MDSProject
             InitializeComponent();
         }
 
+        public DoctorDet newDoctor;
+
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void buttonRegister_Click(object sender, EventArgs e)
+        {
+            newDoctor = new DoctorDet(textBoxName.Text, comboBoxProficiency.Text, textBoxSSN.Text, decimal.ToInt32(numericUpDownCheckIn.Value), decimal.ToInt32(numericUpDownCheckOut.Value));
+
+            listBoxDoctors.Items.Add(newDoctor);
+
         }
     }
 }

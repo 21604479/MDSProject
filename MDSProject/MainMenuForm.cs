@@ -12,6 +12,9 @@ namespace MDSProject
 {
     public partial class MainMenuForm : Form
     {
+
+        private List<Appointment> appointments;
+
         public MainMenuForm()
         {
             InitializeComponent();

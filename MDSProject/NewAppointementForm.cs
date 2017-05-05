@@ -17,6 +17,21 @@ namespace MDSProject
             InitializeComponent();
         }
 
+        public string labelname
+        {
+            get
+            {
+                return labelDoctorsName.Text;
+                
+            }
+
+            set
+            {
+                labelDoctorsName.Text = value;
+                
+            }
+        }
+
         private void buttonSelectDoctor_Click(object sender, EventArgs e)
         {
             SelectDoctorForm selectdoctor = new SelectDoctorForm();
@@ -25,7 +40,8 @@ namespace MDSProject
 
         private void buttonSelectDate_Click(object sender, EventArgs e)
         {
-
+            SelectDateTimeForm selectdate = new SelectDateTimeForm();
+            selectdate.ShowDialog();
         }
 
         private void buttonConfirm_Click(object sender, EventArgs e)

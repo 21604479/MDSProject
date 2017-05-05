@@ -67,6 +67,7 @@
             this.buttonRegister.TabIndex = 8;
             this.buttonRegister.Text = "Register";
             this.buttonRegister.UseVisualStyleBackColor = true;
+            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             // 
             // buttonCancel
             // 
@@ -108,7 +109,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(223, 213);
+            this.label4.Location = new System.Drawing.Point(282, 213);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 13;
@@ -117,7 +118,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(223, 263);
+            this.label5.Location = new System.Drawing.Point(282, 263);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 13);
             this.label5.TabIndex = 14;
@@ -125,9 +126,9 @@
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(276, 60);
+            this.textBoxName.Location = new System.Drawing.Point(267, 60);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(265, 20);
+            this.textBoxName.Size = new System.Drawing.Size(274, 20);
             this.textBoxName.TabIndex = 15;
             // 
             // textBoxSSN
@@ -139,7 +140,7 @@
             // 
             // numericUpDownCheckIn
             // 
-            this.numericUpDownCheckIn.Location = new System.Drawing.Point(288, 211);
+            this.numericUpDownCheckIn.Location = new System.Drawing.Point(347, 211);
             this.numericUpDownCheckIn.Maximum = new decimal(new int[] {
             23,
             0,
@@ -151,7 +152,7 @@
             // 
             // numericUpDownCheckOut
             // 
-            this.numericUpDownCheckOut.Location = new System.Drawing.Point(288, 261);
+            this.numericUpDownCheckOut.Location = new System.Drawing.Point(347, 261);
             this.numericUpDownCheckOut.Maximum = new decimal(new int[] {
             23,
             0,
@@ -165,14 +166,15 @@
             // 
             this.comboBoxProficiency.FormattingEnabled = true;
             this.comboBoxProficiency.Items.AddRange(new object[] {
-            "pediatrics",
-            "dermatology",
-            "cardiology",
-            "radiology",
-            "infectology"});
-            this.comboBoxProficiency.Location = new System.Drawing.Point(305, 110);
+            "Pediatrics",
+            "Dermatology",
+            "Cardiology",
+            "Radiology",
+            "Infectology",
+            "Other"});
+            this.comboBoxProficiency.Location = new System.Drawing.Point(291, 110);
             this.comboBoxProficiency.Name = "comboBoxProficiency";
-            this.comboBoxProficiency.Size = new System.Drawing.Size(236, 21);
+            this.comboBoxProficiency.Size = new System.Drawing.Size(250, 21);
             this.comboBoxProficiency.TabIndex = 20;
             // 
             // listBoxDoctors

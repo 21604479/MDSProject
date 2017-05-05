@@ -99,7 +99,7 @@
             this.buttonRegistDoctor.Name = "buttonRegistDoctor";
             this.buttonRegistDoctor.Size = new System.Drawing.Size(155, 28);
             this.buttonRegistDoctor.TabIndex = 5;
-            this.buttonRegistDoctor.Text = "Register Doctor";
+            this.buttonRegistDoctor.Text = "Register New Doctor";
             this.buttonRegistDoctor.UseVisualStyleBackColor = true;
             this.buttonRegistDoctor.Click += new System.EventHandler(this.buttonRegistDoctor_Click);
             // 

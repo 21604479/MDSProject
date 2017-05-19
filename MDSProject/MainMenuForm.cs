@@ -14,10 +14,13 @@ namespace MDSProject
     {
 
         private List<Appointment> appointments;
+        private List<DoctorDet> doctorDets;
 
         public MainMenuForm()
         {
             InitializeComponent();
+            appointments = new List<Appointment>();
+            doctorDets = new List<DoctorDet>();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -47,6 +50,28 @@ namespace MDSProject
         private void buttonSair_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        public void AdicionarAppointment(Appointment appointment)
+        {
+            appointments.Add(appointment);
+            refreshListAppointments();
+        }
+
+        public void AdicionarDoctor(DoctorDet doctorDet)
+        {
+            doctorDets.Add(doctorDet);
+            refreshListDoctors();
+        }
+
+        private void refreshListAppointments()
+        {
+            
+        }
+
+        private void refreshListDoctors()
+        {
+
         }
     }
 }

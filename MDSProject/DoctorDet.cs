@@ -79,7 +79,7 @@ namespace MDSProject
             }
         }
 
-        public DoctorDet(string name, string proficiency, string ssn, int checkIn, int CheckOut)
+        public DoctorDet(/*string name, string proficiency, string ssn, int checkIn, int CheckOut*/)
         {
             Name = name;
             Proficiency = proficiency;

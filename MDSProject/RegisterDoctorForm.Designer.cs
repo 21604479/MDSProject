@@ -43,6 +43,8 @@
             this.comboBoxProficiency = new System.Windows.Forms.ComboBox();
             this.listBoxDoctors = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCheckIn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCheckOut)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -75,7 +77,7 @@
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(117, 30);
             this.buttonCancel.TabIndex = 9;
-            this.buttonCancel.Text = "Cancel";
+            this.buttonCancel.Text = "Back";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -147,7 +149,7 @@
             0,
             0});
             this.numericUpDownCheckIn.Name = "numericUpDownCheckIn";
-            this.numericUpDownCheckIn.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownCheckIn.Size = new System.Drawing.Size(42, 20);
             this.numericUpDownCheckIn.TabIndex = 18;
             // 
             // numericUpDownCheckOut
@@ -159,7 +161,7 @@
             0,
             0});
             this.numericUpDownCheckOut.Name = "numericUpDownCheckOut";
-            this.numericUpDownCheckOut.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownCheckOut.Size = new System.Drawing.Size(42, 20);
             this.numericUpDownCheckOut.TabIndex = 19;
             // 
             // comboBoxProficiency
@@ -195,11 +197,31 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Existing Doctors";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(395, 213);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(15, 13);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "H";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(395, 263);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(15, 13);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "H";
+            // 
             // RegisterDoctorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(560, 349);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.comboBoxProficiency);
             this.Controls.Add(this.numericUpDownCheckOut);
@@ -241,5 +263,7 @@
         private System.Windows.Forms.ComboBox comboBoxProficiency;
         private System.Windows.Forms.ListBox listBoxDoctors;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }

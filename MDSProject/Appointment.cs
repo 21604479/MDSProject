@@ -72,12 +72,16 @@ namespace MDSProject
             }
         }
 
-        public Appointment(string patientName, string doctorName, string date, string hour)
+        public Appointment(/*string patientName, string doctorName, string date, string hour*/)
         {
             PatientName = patientName;
             DoctorName = doctorName;
             Date = date;
             Hour = hour;
+        }
+        public override string ToString()
+        {
+            return patientName;
         }
     }
 }

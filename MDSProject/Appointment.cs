@@ -10,6 +10,8 @@ namespace MDSProject
     {
         private string patientName;
         private string doctorName;
+        private string date;
+        private string hour;
 
 
 
@@ -44,13 +46,38 @@ namespace MDSProject
             }
         }
 
+        public string Date
+        {
+            get
+            {
+                return date;
+            }
 
+            set
+            {
+                date = value;
+            }
+        }
 
+        public string Hour
+        {
+            get
+            {
+                return hour;
+            }
 
-        public Appointment(string patientName, string doctorName)
+            set
+            {
+                hour = value;
+            }
+        }
+
+        public Appointment(string patientName, string doctorName, string date, string hour)
         {
             PatientName = patientName;
             DoctorName = doctorName;
+            Date = date;
+            Hour = hour;
         }
     }
 }

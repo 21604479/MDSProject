@@ -12,15 +12,19 @@ namespace MDSProject
 {
     public partial class SelectDateTimeForm : Form
     {
-        public SelectDateTimeForm()
+        public SelectDateTimeForm(string text)
         {
             InitializeComponent();
 
             NewAppointementForm newapp = new NewAppointementForm();
 
-            labelDoctorsName.Text = newapp.doctorname;
-
+            labelDoctorsName.Text = text;
         }
 
+        private void buttonConfirm_Click(object sender, EventArgs e)
+        {
+            /*if (dateTimePickerAppointment < DateTime.Today)
+                MessageBox.Show("Invalid Date.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);*/
+        }
     }
 }

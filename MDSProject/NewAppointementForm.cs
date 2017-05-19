@@ -17,26 +17,22 @@ namespace MDSProject
             InitializeComponent();
         }
 
-        public string labelname
+        public string doctorname
         {
             get
             {
                 return labelDoctorsName.Text;
-                
-            }
-
-            set
-            {
-                labelDoctorsName.Text = value;
-                
             }
         }
 
         private void buttonSelectDoctor_Click(object sender, EventArgs e)
         {
             SelectDoctorForm selectdoctor = new SelectDoctorForm();
-            selectdoctor.ShowDialog();
+
+            if (selectdoctor.ShowDialog() == DialogResult.OK)
+                labelDoctorsName.Text = selectdoctor.selectedDoctor;
         }
+
 
         private void buttonSelectDate_Click(object sender, EventArgs e)
         {

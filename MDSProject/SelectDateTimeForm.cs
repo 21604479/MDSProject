@@ -18,7 +18,7 @@ namespace MDSProject
 
             NewAppointementForm newapp = new NewAppointementForm();
 
-            labelDoctorsName.Text = newapp.labelname;
+            labelDoctorsName.Text = newapp.doctorname;
 
         }
 

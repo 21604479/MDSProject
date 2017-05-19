@@ -15,37 +15,32 @@ namespace MDSProject
         public NewAppointementForm()
         {
             InitializeComponent();
-        }
 
-        public string labelname
-        {
-            get
-            {
-                return labelDoctorsName.Text;
-                
-            }
-
-            set
-            {
-                labelDoctorsName.Text = value;
-                
-            }
         }
 
         private void buttonSelectDoctor_Click(object sender, EventArgs e)
         {
             SelectDoctorForm selectdoctor = new SelectDoctorForm();
-            selectdoctor.ShowDialog();
+
+            if (selectdoctor.ShowDialog() == DialogResult.OK)
+            {
+                textBoxDoctorsName.Text = selectdoctor.selectedDoctor;
+            }
         }
+
 
         private void buttonSelectDate_Click(object sender, EventArgs e)
         {
-            SelectDateTimeForm selectdate = new SelectDateTimeForm();
+            SelectDateTimeForm selectdate = new SelectDateTimeForm(textBoxDoctorsName.Text);
             selectdate.ShowDialog();
         }
 
         private void buttonConfirm_Click(object sender, EventArgs e)
         {
+            if (textBoxDoctorsName.Text.Length == 0 || textBoxDateTime.Text.Length == 0 || textBox1.Text.Length == 0)
+            {
+                MessageBox.Show("Fill the blank spaces, Please.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
         }
 

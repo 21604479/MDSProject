@@ -99,9 +99,9 @@
             this.labelDoctorsName.AutoSize = true;
             this.labelDoctorsName.Location = new System.Drawing.Point(41, 17);
             this.labelDoctorsName.Name = "labelDoctorsName";
-            this.labelDoctorsName.Size = new System.Drawing.Size(144, 13);
+            this.labelDoctorsName.Size = new System.Drawing.Size(77, 13);
             this.labelDoctorsName.TabIndex = 9;
-            this.labelDoctorsName.Text = "Nome do Médico Automãtico";
+            this.labelDoctorsName.Text = "Doctor\'s Name";
             // 
             // groupBoxDoctor
             // 
@@ -119,9 +119,9 @@
             this.labelDateandTime.AutoSize = true;
             this.labelDateandTime.Location = new System.Drawing.Point(41, 22);
             this.labelDateandTime.Name = "labelDateandTime";
-            this.labelDateandTime.Size = new System.Drawing.Size(180, 13);
+            this.labelDateandTime.Size = new System.Drawing.Size(169, 13);
             this.labelDateandTime.TabIndex = 10;
-            this.labelDateandTime.Text = "Data e Hora da Consulta Automãtico";
+            this.labelDateandTime.Text = "Date and Time of the Appointment";
             // 
             // groupBox1
             // 

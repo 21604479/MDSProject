@@ -19,13 +19,19 @@ namespace MDSProject
 
         private void buttonSelectDoctor_Click(object sender, EventArgs e)
         {
-            //labelDoctorsName.Text = listBoxRegisteredDoctors.SelectedItem.ToString();
+            NewAppointementForm newapp = new NewAppointementForm();
+
+            if (listBoxRegisteredDoctors.SelectedIndex > -1)
+            {
+                newapp.labelname = listBoxRegisteredDoctors.Items[listBoxRegisteredDoctors.SelectedIndex].ToString();
+            }
+
             this.Close();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            
+            this.Close();  
         }
     }
 }

@@ -57,5 +57,10 @@ namespace MDSProject
             else
                 MessageBox.Show("Item not found.");
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

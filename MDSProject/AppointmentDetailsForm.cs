@@ -19,24 +19,12 @@ namespace MDSProject
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Close();
+            this,Close();
         }
 
         private void buttonCancelAppointment_Click(object sender, EventArgs e)
         {
-
-           /* if ()
-            {
-                Close();
-                ErrorMessageForm errorMessage = new ErrorMessageForm();
-            }
-            else
-            {
-                Close();
-                ConfirmationForm confirmation = new ConfirmationForm();
-            }*/
-
-            
+                  
         }
     }
 }

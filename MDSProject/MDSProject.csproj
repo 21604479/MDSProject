@@ -118,6 +118,9 @@
     <Compile Include="NewAppointementForm.Designer.cs">
       <DependentUpon>NewAppointementForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="override\Appointment.cs" />
+    <Compile Include="override\ConsultationDet.cs" />
+    <Compile Include="override\Doctor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterDoctorForm.cs">

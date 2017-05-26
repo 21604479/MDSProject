@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Appointment.cs" />
     <Compile Include="AppointmentDetailsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +66,7 @@
     <Compile Include="ConfirmationForm.Designer.cs">
       <DependentUpon>ConfirmationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DoctorDet.cs" />
     <Compile Include="ErrorMessageForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +98,12 @@
     </Compile>
     <Compile Include="RegisterDoctorForm.Designer.cs">
       <DependentUpon>RegisterDoctorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectDateTimeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectDateTimeForm.Designer.cs">
+      <DependentUpon>SelectDateTimeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SelectDoctorForm.cs">
       <SubType>Form</SubType>
@@ -135,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterDoctorForm.resx">
       <DependentUpon>RegisterDoctorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectDateTimeForm.resx">
+      <DependentUpon>SelectDateTimeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SelectDoctorForm.resx">
       <DependentUpon>SelectDoctorForm.cs</DependentUpon>

@@ -33,12 +33,12 @@
             this.buttonSelectDate = new System.Windows.Forms.Button();
             this.buttonConfirm = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.labelDoctorsName = new System.Windows.Forms.Label();
             this.groupBoxDoctor = new System.Windows.Forms.GroupBox();
-            this.labelDateandTime = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.labelPatienceName = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxDoctorsName = new System.Windows.Forms.TextBox();
+            this.textBoxDateTime = new System.Windows.Forms.TextBox();
             this.groupBoxDoctor.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +56,7 @@
             // 
             // buttonSelectDoctor
             // 
-            this.buttonSelectDoctor.Location = new System.Drawing.Point(242, 12);
+            this.buttonSelectDoctor.Location = new System.Drawing.Point(242, 17);
             this.buttonSelectDoctor.Name = "buttonSelectDoctor";
             this.buttonSelectDoctor.Size = new System.Drawing.Size(105, 23);
             this.buttonSelectDoctor.TabIndex = 6;
@@ -94,19 +94,10 @@
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // labelDoctorsName
-            // 
-            this.labelDoctorsName.AutoSize = true;
-            this.labelDoctorsName.Location = new System.Drawing.Point(41, 17);
-            this.labelDoctorsName.Name = "labelDoctorsName";
-            this.labelDoctorsName.Size = new System.Drawing.Size(144, 13);
-            this.labelDoctorsName.TabIndex = 9;
-            this.labelDoctorsName.Text = "Nome do Médico Automãtico";
-            // 
             // groupBoxDoctor
             // 
-            this.groupBoxDoctor.Controls.Add(this.labelDoctorsName);
             this.groupBoxDoctor.Controls.Add(this.buttonSelectDoctor);
+            this.groupBoxDoctor.Controls.Add(this.textBoxDoctorsName);
             this.groupBoxDoctor.Location = new System.Drawing.Point(12, 50);
             this.groupBoxDoctor.Name = "groupBoxDoctor";
             this.groupBoxDoctor.Size = new System.Drawing.Size(353, 53);
@@ -114,18 +105,9 @@
             this.groupBoxDoctor.TabStop = false;
             this.groupBoxDoctor.Text = "Doctor";
             // 
-            // labelDateandTime
-            // 
-            this.labelDateandTime.AutoSize = true;
-            this.labelDateandTime.Location = new System.Drawing.Point(41, 22);
-            this.labelDateandTime.Name = "labelDateandTime";
-            this.labelDateandTime.Size = new System.Drawing.Size(180, 13);
-            this.labelDateandTime.TabIndex = 10;
-            this.labelDateandTime.Text = "Data e Hora da Consulta Automãtico";
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.labelDateandTime);
+            this.groupBox1.Controls.Add(this.textBoxDateTime);
             this.groupBox1.Controls.Add(this.buttonSelectDate);
             this.groupBox1.Location = new System.Drawing.Point(12, 125);
             this.groupBox1.Name = "groupBox1";
@@ -149,6 +131,25 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(342, 20);
             this.textBox1.TabIndex = 12;
+            // 
+            // textBoxDoctorsName
+            // 
+            this.textBoxDoctorsName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxDoctorsName.Location = new System.Drawing.Point(11, 19);
+            this.textBoxDoctorsName.Name = "textBoxDoctorsName";
+            this.textBoxDoctorsName.ReadOnly = true;
+            this.textBoxDoctorsName.Size = new System.Drawing.Size(225, 13);
+            this.textBoxDoctorsName.TabIndex = 13;
+            // 
+            // textBoxDateTime
+            // 
+            this.textBoxDateTime.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxDateTime.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.textBoxDateTime.Location = new System.Drawing.Point(11, 21);
+            this.textBoxDateTime.Name = "textBoxDateTime";
+            this.textBoxDateTime.ReadOnly = true;
+            this.textBoxDateTime.Size = new System.Drawing.Size(225, 13);
+            this.textBoxDateTime.TabIndex = 14;
             // 
             // NewAppointementForm
             // 
@@ -180,11 +181,11 @@
         private System.Windows.Forms.Button buttonSelectDate;
         private System.Windows.Forms.Button buttonConfirm;
         private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.Label labelDoctorsName;
         private System.Windows.Forms.GroupBox groupBoxDoctor;
-        private System.Windows.Forms.Label labelDateandTime;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label labelPatienceName;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxDoctorsName;
+        private System.Windows.Forms.TextBox textBoxDateTime;
     }
 }

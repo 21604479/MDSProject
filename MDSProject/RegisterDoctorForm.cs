@@ -13,7 +13,7 @@ namespace MDSProject
     public partial class RegisterDoctorForm : Form
     {
 
-        private List<DoctorDet> doctorDets;
+        //private List<DoctorDet> doctorDets;
 
         public RegisterDoctorForm()
         {

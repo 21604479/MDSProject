@@ -12,11 +12,15 @@ namespace MDSProject
 {
     public partial class NewAppointementForm : Form
     {
+        HealthITDBContainer1 container;
+
         public NewAppointementForm()
         {
             InitializeComponent();
+             container = new HealthITDBContainer1();
 
         }
+
 
         private void buttonSelectDoctor_Click(object sender, EventArgs e)
         {
@@ -41,6 +45,17 @@ namespace MDSProject
             {
                 MessageBox.Show("Fill the blank spaces, Please.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            else
+            {
+                Appointment newAPP = new Appointment()
+                {
+                    DoctorName = textBoxDoctorsName.Text,
+                    Date = (textBoxDateTime.Text),
+
+
+                };
+            }
+
 
         }
 

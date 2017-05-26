@@ -61,12 +61,6 @@
     <Compile Include="Appointment.cs">
       <DependentUpon>HealthITDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="AppointmentDetailsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AppointmentDetailsForm.Designer.cs">
-      <DependentUpon>AppointmentDetailsForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="CancelForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,9 +135,6 @@
     <Compile Include="SelectDoctorForm.Designer.cs">
       <DependentUpon>SelectDoctorForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AppointmentDetailsForm.resx">
-      <DependentUpon>AppointmentDetailsForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CancelForm.resx">
       <DependentUpon>CancelForm.cs</DependentUpon>
     </EmbeddedResource>

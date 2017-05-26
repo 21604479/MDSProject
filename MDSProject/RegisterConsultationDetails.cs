@@ -24,7 +24,14 @@ namespace MDSProject
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            if(textBox1.Text.Length > 0)
+            {
+                button3.Enabled = true;
+            }
+            else
+            {
+                button3.Enabled = false;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

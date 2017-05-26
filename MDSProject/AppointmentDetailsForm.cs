@@ -19,12 +19,21 @@ namespace MDSProject
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this,Close();
+            this.Close();
         }
 
         private void buttonCancelAppointment_Click(object sender, EventArgs e)
         {
-                  
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to save?", "Confirmation", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                //do something
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do something else
+            }
+
         }
     }
 }

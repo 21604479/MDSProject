@@ -17,20 +17,27 @@ namespace MDSProject
             InitializeComponent();
         }
 
+        public string selectedDoctor
+        {
+            get
+            {
+                return listBoxRegisteredDoctors.SelectedItem.ToString();
+            }
+        }
+
         private void buttonSelectDoctor_Click(object sender, EventArgs e)
         {
-            NewAppointementForm newapp = new NewAppointementForm();
 
-            if (listBoxRegisteredDoctors.SelectedIndex > -1)
-            {
-                newapp.labelname = listBoxRegisteredDoctors.Items[listBoxRegisteredDoctors.SelectedIndex].ToString();
-            }
+            if (listBoxRegisteredDoctors.SelectedIndex == -1)
+                return;
 
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();  
         }
     }

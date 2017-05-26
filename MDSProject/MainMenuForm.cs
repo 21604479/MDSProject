@@ -52,7 +52,7 @@ namespace MDSProject
             Application.Exit();
         }
 
-        /*public void AdicionarAppointment(Appointment appointment)
+       /* public void AdicionarAppointment(Appointment appointment)
         {
             appointments.Add(appointment);
             refreshListAppointments();

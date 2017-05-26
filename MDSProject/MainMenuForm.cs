@@ -37,7 +37,8 @@ namespace MDSProject
 
         private void buttonRegisterConsult_Click(object sender, EventArgs e)
         {
-
+            RegisterConsultationDetails ReCon = new RegisterConsultationDetails();
+            ReCon.ShowDialog();
         }
     }
 }

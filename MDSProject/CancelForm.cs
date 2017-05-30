@@ -20,7 +20,7 @@ namespace MDSProject
         {
             InitializeComponent();
             hcontainer = new HealthITDBContainer1();
-            
+            refreshListBox();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -28,16 +28,11 @@ namespace MDSProject
             if (listBoxAppointment.SelectedIndex >= 0)
             {
                 selectedAppointment = (Appointment)listBoxAppointment.SelectedItem;
+                AppointmentDetailsForm newForm = new AppointmentDetailsForm(selectedAppointment);
+                newForm.ShowDialog();
+                refreshListBox()
 
-                if (selectedAppointment.Date > DateTime.Today)
-                {
-                    hcontainer.AppointmentSet.Remove(selectedAppointment);
-                    refreshListBox();
-                }
-                else
-                {
-                    MessageBox.Show("Impossible to take this action");
-                }
+
             }  
         }
 

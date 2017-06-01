@@ -42,6 +42,10 @@ namespace MDSProject
             {
                 MessageBox.Show("Invalid SSN", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            else if (numericUpDownCheckOut.Value <= numericUpDownCheckIn.Value)
+            {
+                MessageBox.Show("A doctor can't check out before check in", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
             else if ( listBoxDoctors.SelectedIndex != -1)
                 {

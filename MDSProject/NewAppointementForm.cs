@@ -50,7 +50,7 @@ namespace MDSProject
                 Appointment newAPP = new Appointment()
                 {
                     DoctorName = textBoxDoctorsName.Text,
-                    Date = (textBoxDateTime.Text),
+                    //Date = (textBoxDateTime.Text),
 
 
                 };

@@ -32,7 +32,6 @@
             this.listBoxAppointment = new System.Windows.Forms.ListBox();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.buttonSelect = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -70,7 +69,7 @@
             // buttonCancel
             // 
             this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.buttonCancel.Location = new System.Drawing.Point(193, 357);
+            this.buttonCancel.Location = new System.Drawing.Point(213, 356);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(120, 41);
@@ -79,23 +78,12 @@
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // buttonSelect
-            // 
-            this.buttonSelect.Location = new System.Drawing.Point(193, 310);
-            this.buttonSelect.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonSelect.Name = "buttonSelect";
-            this.buttonSelect.Size = new System.Drawing.Size(120, 41);
-            this.buttonSelect.TabIndex = 4;
-            this.buttonSelect.Text = "Select";
-            this.buttonSelect.UseVisualStyleBackColor = true;
-            this.buttonSelect.Click += new System.EventHandler(this.buttonSelect_Click);
-            // 
             // textBoxSearch
             // 
             this.textBoxSearch.Location = new System.Drawing.Point(12, 319);
             this.textBoxSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(120, 22);
+            this.textBoxSearch.Size = new System.Drawing.Size(321, 22);
             this.textBoxSearch.TabIndex = 5;
             this.textBoxSearch.Text = "Search";
             // 
@@ -105,7 +93,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(347, 410);
             this.Controls.Add(this.textBoxSearch);
-            this.Controls.Add(this.buttonSelect);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.listBoxAppointment);
@@ -124,7 +111,6 @@
         private System.Windows.Forms.ListBox listBoxAppointment;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.Button buttonSelect;
         private System.Windows.Forms.TextBox textBoxSearch;
     }
 }

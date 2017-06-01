@@ -13,26 +13,20 @@ namespace MDSProject
     public partial class CancelForm : Form
     {
 
-        private List<Appointment> appointments;
+        HealthITDBContainer1 hcontainer;
+        private Appointment selectedAppointment;
 
         public CancelForm()
         {
             InitializeComponent();
-            listBoxAppointment.Items.Add("Sarah");
-            listBoxAppointment.Items.Add("Alex ");
-            listBoxAppointment.Items.Add("Pedro");
-            listBoxAppointment.Items.Add("Luis");
+            hcontainer = new HealthITDBContainer1();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            Close();
-        }
-
-        private void buttonSelect_Click(object sender, EventArgs e)
-        {
-            AppointmentDetailsForm appointmentDetails = new AppointmentDetailsForm();
-            appointmentDetails.ShowDialog();
+            selectedAppointment = (Appointment)listBoxAppointment.SelectedItem;
+            hcontainer.AppointmentSet.Remove(selectedAppointment);
+            refreshListBox();
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)
@@ -56,7 +50,7 @@ namespace MDSProject
         private void refreshListBox()
         {
             listBoxAppointment.Items.Clear();
-            listBoxAppointment.Items.AddRange(appointments.ToArray());
+            listBoxAppointment.Items.AddRange(hcontainer.AppointmentSet.ToArray());
         }
     }
 }

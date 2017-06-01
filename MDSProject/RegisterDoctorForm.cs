@@ -13,16 +13,13 @@ namespace MDSProject
     public partial class RegisterDoctorForm : Form
     {
 
-        //private List<DoctorDet> doctorDets;
+        HealthITDBContainer1 container;
 
         public RegisterDoctorForm()
         {
             InitializeComponent();
-            
-            if (doctorDets!=null)
-            {
-                refreshDoc();
-            }
+
+            container = new HealthITDBContainer1();
         }
 
         //public DoctorDet newDoctor;
@@ -38,27 +35,31 @@ namespace MDSProject
             {
                 MessageBox.Show("Fill the blank boxes, Please.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if (textBoxSSN.Text.Length !=9)
+            else if (textBoxSSN.Text.Length != 9)
             {
                 MessageBox.Show("Invalid SSN", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                DoctorDet newDoctor = new DoctorDet();
-                newDoctor.Name= textBoxName.Text;
-                newDoctor.Proficiency = comboBoxProficiency.Text;
-                newDoctor.Ssn= textBoxSSN.Text;
-                newDoctor.CheckIn = decimal.ToInt32(numericUpDownCheckIn.Value);
-                newDoctor.CheckOut= decimal.ToInt32(numericUpDownCheckOut.Value);
+                Doctor newDoctor = new Doctor()
+                {
+                    Name = textBoxName.Text,
+                    Proficiency = comboBoxProficiency.Text,
+                    Ssn = textBoxSSN.Text,
+                    CheckIn = decimal.ToInt32(numericUpDownCheckIn.Value),
+                    CheckOut = decimal.ToInt32(numericUpDownCheckOut.Value),
+                };
 
-                doctorDets.Add(newDoctor);
+                container.DoctorSet.Add(newDoctor);
+                container.SaveChanges();
+                refreshDoc();
             }
         }
 
         private void refreshDoc()
         {
             listBoxDoctors.Items.Clear();
-            listBoxDoctors.Items.AddRange(doctorDets.ToArray());
+            listBoxDoctors.Items.AddRange(container.DoctorSet.ToArray());
         }
     }
 }

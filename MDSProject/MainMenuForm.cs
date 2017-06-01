@@ -13,14 +13,14 @@ namespace MDSProject
     public partial class MainMenuForm : Form
     {
 
-        //private List<Appointment> appointments;
-        //private List<DoctorDet> doctorDets;
+        private List<Appointment> appointments;
+        private List<Doctor> doctorDets;
 
         public MainMenuForm()
         {
             InitializeComponent();
-            //appointments = new List<Appointment>();
-            //doctorDets = new List<DoctorDet>();
+            appointments = new List<Appointment>();
+            doctorDets = new List<Doctor>();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)

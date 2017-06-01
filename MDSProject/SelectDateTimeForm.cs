@@ -51,7 +51,7 @@ namespace MDSProject
             {*/
                 
                 numericUpDown1.Value = horas;
-                this.DialogResult = DialogResult.OK;
+                DialogResult = DialogResult.OK;
                 Close();
             /*}
         if (dateTimePickerAppointment < DateTime.Today)

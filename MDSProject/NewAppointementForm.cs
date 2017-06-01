@@ -36,8 +36,8 @@ namespace MDSProject
         private void buttonSelectDate_Click(object sender, EventArgs e)
         {
             SelectDateTimeForm selectdate = new SelectDateTimeForm(textBoxDoctorsName.Text);
-            selectdate.ShowDialog();
-            if (selectdate.ShowDialog() == DialogResult.OK)
+            DialogResult result = selectdate.ShowDialog();
+            if (result == DialogResult.OK)
             {
                 numericUpDown1.Value = selectdate.horas;
 

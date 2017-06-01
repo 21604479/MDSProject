@@ -34,13 +34,16 @@
             this.buttonConfirm = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.groupBoxDoctor = new System.Windows.Forms.GroupBox();
+            this.textBoxDoctorsName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBoxDateTime = new System.Windows.Forms.TextBox();
             this.labelPatienceName = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBoxDoctorsName = new System.Windows.Forms.TextBox();
-            this.textBoxDateTime = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.groupBoxDoctor.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelTitle
@@ -105,33 +108,6 @@
             this.groupBoxDoctor.TabStop = false;
             this.groupBoxDoctor.Text = "Doctor";
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.textBoxDateTime);
-            this.groupBox1.Controls.Add(this.buttonSelectDate);
-            this.groupBox1.Location = new System.Drawing.Point(12, 125);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(353, 59);
-            this.groupBox1.TabIndex = 11;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Appointment Date ";
-            // 
-            // labelPatienceName
-            // 
-            this.labelPatienceName.AutoSize = true;
-            this.labelPatienceName.Location = new System.Drawing.Point(12, 196);
-            this.labelPatienceName.Name = "labelPatienceName";
-            this.labelPatienceName.Size = new System.Drawing.Size(78, 13);
-            this.labelPatienceName.TabIndex = 11;
-            this.labelPatienceName.Text = "Patient\'s Name";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(17, 212);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(342, 20);
-            this.textBox1.TabIndex = 12;
-            // 
             // textBoxDoctorsName
             // 
             this.textBoxDoctorsName.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -140,6 +116,19 @@
             this.textBoxDoctorsName.ReadOnly = true;
             this.textBoxDoctorsName.Size = new System.Drawing.Size(225, 13);
             this.textBoxDoctorsName.TabIndex = 13;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.numericUpDown1);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.textBoxDateTime);
+            this.groupBox1.Controls.Add(this.buttonSelectDate);
+            this.groupBox1.Location = new System.Drawing.Point(12, 125);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(353, 87);
+            this.groupBox1.TabIndex = 11;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Appointment Date ";
             // 
             // textBoxDateTime
             // 
@@ -150,6 +139,39 @@
             this.textBoxDateTime.ReadOnly = true;
             this.textBoxDateTime.Size = new System.Drawing.Size(225, 13);
             this.textBoxDateTime.TabIndex = 14;
+            // 
+            // labelPatienceName
+            // 
+            this.labelPatienceName.AutoSize = true;
+            this.labelPatienceName.Location = new System.Drawing.Point(12, 215);
+            this.labelPatienceName.Name = "labelPatienceName";
+            this.labelPatienceName.Size = new System.Drawing.Size(78, 13);
+            this.labelPatienceName.TabIndex = 11;
+            this.labelPatienceName.Text = "Patient\'s Name";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(17, 231);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(342, 20);
+            this.textBox1.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(63, 61);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(15, 13);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "H";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(21, 59);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.ReadOnly = true;
+            this.numericUpDown1.Size = new System.Drawing.Size(36, 20);
+            this.numericUpDown1.TabIndex = 16;
             // 
             // NewAppointementForm
             // 
@@ -169,6 +191,7 @@
             this.groupBoxDoctor.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,5 +210,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBoxDoctorsName;
         private System.Windows.Forms.TextBox textBoxDateTime;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }

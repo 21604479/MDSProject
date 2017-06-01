@@ -37,11 +37,16 @@ namespace MDSProject
         {
             SelectDateTimeForm selectdate = new SelectDateTimeForm(textBoxDoctorsName.Text);
             selectdate.ShowDialog();
+            if (selectdate.ShowDialog() == DialogResult.OK)
+            {
+                numericUpDown1.Value = selectdate.horas;
+
+            }
         }
 
         private void buttonConfirm_Click(object sender, EventArgs e)
         {
-            if (textBoxDoctorsName.Text.Length == 0 || textBoxDateTime.Text.Length == 0 || textBox1.Text.Length == 0)
+            if (textBoxDoctorsName.Text.Length == 0 || /*textBoxDateTime.Text.Length == 0 ||*/ textBox1.Text.Length == 0)
             {
                 MessageBox.Show("Fill the blank spaces, Please.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -50,7 +55,10 @@ namespace MDSProject
                 Appointment newAPP = new Appointment()
                 {
                     DoctorName = textBoxDoctorsName.Text,
-                    Date = (textBoxDateTime.Text),
+                    //Hour = labelHour.Text,
+                    
+
+                    //Date = (textBoxDateTime.Text),
 
 
                 };

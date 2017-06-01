@@ -35,7 +35,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePickerAppointment = new System.Windows.Forms.DateTimePicker();
             this.buttonConfirm = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelTitle
@@ -79,7 +81,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 150);
+            this.label3.Location = new System.Drawing.Point(250, 94);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 13);
             this.label3.TabIndex = 11;
@@ -92,13 +94,13 @@
             this.dateTimePickerAppointment.MinDate = new System.DateTime(2017, 5, 19, 10, 27, 50, 0);
             this.dateTimePickerAppointment.Name = "dateTimePickerAppointment";
             this.dateTimePickerAppointment.RightToLeftLayout = true;
-            this.dateTimePickerAppointment.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerAppointment.Size = new System.Drawing.Size(104, 20);
             this.dateTimePickerAppointment.TabIndex = 12;
             this.dateTimePickerAppointment.Value = new System.DateTime(2017, 5, 19, 10, 43, 13, 0);
             // 
             // buttonConfirm
             // 
-            this.buttonConfirm.Location = new System.Drawing.Point(306, 268);
+            this.buttonConfirm.Location = new System.Drawing.Point(306, 136);
             this.buttonConfirm.Name = "buttonConfirm";
             this.buttonConfirm.Size = new System.Drawing.Size(75, 23);
             this.buttonConfirm.TabIndex = 13;
@@ -106,20 +108,29 @@
             this.buttonConfirm.UseVisualStyleBackColor = true;
             this.buttonConfirm.Click += new System.EventHandler(this.buttonConfirm_Click);
             // 
-            // dateTimePicker1
+            // numericUpDown1
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker1.Location = new System.Drawing.Point(112, 150);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 14;
+            this.numericUpDown1.Location = new System.Drawing.Point(290, 92);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(44, 20);
+            this.numericUpDown1.TabIndex = 14;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(340, 93);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(15, 13);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "H";
             // 
             // SelectDateTimeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(393, 303);
-            this.Controls.Add(this.dateTimePicker1);
+            this.ClientSize = new System.Drawing.Size(393, 177);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.buttonConfirm);
             this.Controls.Add(this.dateTimePickerAppointment);
             this.Controls.Add(this.label3);
@@ -129,6 +140,7 @@
             this.Controls.Add(this.labelTitle);
             this.Name = "SelectDateTimeForm";
             this.Text = "Date and Time of the Appointment";
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,6 +155,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePickerAppointment;
         private System.Windows.Forms.Button buttonConfirm;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label label4;
     }
 }

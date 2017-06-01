@@ -30,7 +30,7 @@ namespace MDSProject
                 selectedAppointment = (Appointment)listBoxAppointment.SelectedItem;
                 AppointmentDetailsForm newForm = new AppointmentDetailsForm(selectedAppointment);
                 newForm.ShowDialog();
-                refreshListBox()
+                refreshListBox();
 
 
             }  

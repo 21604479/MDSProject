@@ -45,6 +45,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.buttonNew = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCheckIn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCheckOut)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -63,9 +64,9 @@
             // 
             // buttonRegister
             // 
-            this.buttonRegister.Location = new System.Drawing.Point(237, 307);
+            this.buttonRegister.Location = new System.Drawing.Point(235, 245);
             this.buttonRegister.Name = "buttonRegister";
-            this.buttonRegister.Size = new System.Drawing.Size(117, 30);
+            this.buttonRegister.Size = new System.Drawing.Size(80, 30);
             this.buttonRegister.TabIndex = 8;
             this.buttonRegister.Text = "Register";
             this.buttonRegister.UseVisualStyleBackColor = true;
@@ -73,9 +74,9 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(415, 307);
+            this.buttonCancel.Location = new System.Drawing.Point(468, 245);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(117, 30);
+            this.buttonCancel.Size = new System.Drawing.Size(80, 30);
             this.buttonCancel.TabIndex = 9;
             this.buttonCancel.Text = "Back";
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -111,7 +112,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(282, 213);
+            this.label4.Location = new System.Drawing.Point(253, 207);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 13;
@@ -120,11 +121,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(282, 263);
+            this.label5.Location = new System.Drawing.Point(400, 207);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 13);
             this.label5.TabIndex = 14;
-            this.label5.Text = "Chech out:";
+            this.label5.Text = "Check out:";
             // 
             // textBoxName
             // 
@@ -139,10 +140,11 @@
             this.textBoxSSN.Name = "textBoxSSN";
             this.textBoxSSN.Size = new System.Drawing.Size(220, 20);
             this.textBoxSSN.TabIndex = 16;
+            this.textBoxSSN.TextChanged += new System.EventHandler(this.textBoxSSN_TextChanged);
             // 
             // numericUpDownCheckIn
             // 
-            this.numericUpDownCheckIn.Location = new System.Drawing.Point(347, 211);
+            this.numericUpDownCheckIn.Location = new System.Drawing.Point(318, 205);
             this.numericUpDownCheckIn.Maximum = new decimal(new int[] {
             23,
             0,
@@ -154,7 +156,7 @@
             // 
             // numericUpDownCheckOut
             // 
-            this.numericUpDownCheckOut.Location = new System.Drawing.Point(347, 261);
+            this.numericUpDownCheckOut.Location = new System.Drawing.Point(465, 205);
             this.numericUpDownCheckOut.Maximum = new decimal(new int[] {
             23,
             0,
@@ -182,17 +184,18 @@
             // listBoxDoctors
             // 
             this.listBoxDoctors.FormattingEnabled = true;
-            this.listBoxDoctors.Location = new System.Drawing.Point(6, 25);
+            this.listBoxDoctors.Location = new System.Drawing.Point(6, 21);
             this.listBoxDoctors.Name = "listBoxDoctors";
-            this.listBoxDoctors.Size = new System.Drawing.Size(193, 290);
+            this.listBoxDoctors.Size = new System.Drawing.Size(193, 251);
             this.listBoxDoctors.TabIndex = 21;
+            this.listBoxDoctors.SelectedIndexChanged += new System.EventHandler(this.listBoxDoctors_SelectedIndexChanged);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.listBoxDoctors);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(205, 325);
+            this.groupBox1.Size = new System.Drawing.Size(205, 282);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Existing Doctors";
@@ -200,7 +203,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(395, 213);
+            this.label6.Location = new System.Drawing.Point(366, 207);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(15, 13);
             this.label6.TabIndex = 24;
@@ -209,17 +212,28 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(395, 263);
+            this.label7.Location = new System.Drawing.Point(513, 207);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(15, 13);
             this.label7.TabIndex = 25;
             this.label7.Text = "H";
             // 
+            // buttonNew
+            // 
+            this.buttonNew.Location = new System.Drawing.Point(356, 245);
+            this.buttonNew.Name = "buttonNew";
+            this.buttonNew.Size = new System.Drawing.Size(80, 30);
+            this.buttonNew.TabIndex = 26;
+            this.buttonNew.Text = "New";
+            this.buttonNew.UseVisualStyleBackColor = true;
+            this.buttonNew.Click += new System.EventHandler(this.buttonNew_Click);
+            // 
             // RegisterDoctorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 349);
+            this.ClientSize = new System.Drawing.Size(560, 297);
+            this.Controls.Add(this.buttonNew);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox1);
@@ -265,5 +279,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button buttonNew;
     }
 }

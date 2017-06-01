@@ -64,7 +64,7 @@
             // 
             // buttonRegister
             // 
-            this.buttonRegister.Location = new System.Drawing.Point(235, 258);
+            this.buttonRegister.Location = new System.Drawing.Point(235, 245);
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.Size = new System.Drawing.Size(80, 30);
             this.buttonRegister.TabIndex = 8;
@@ -74,7 +74,7 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(468, 258);
+            this.buttonCancel.Location = new System.Drawing.Point(468, 245);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(80, 30);
             this.buttonCancel.TabIndex = 9;
@@ -112,7 +112,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(253, 217);
+            this.label4.Location = new System.Drawing.Point(253, 207);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 13;
@@ -121,7 +121,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(400, 217);
+            this.label5.Location = new System.Drawing.Point(400, 207);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 13);
             this.label5.TabIndex = 14;
@@ -144,7 +144,7 @@
             // 
             // numericUpDownCheckIn
             // 
-            this.numericUpDownCheckIn.Location = new System.Drawing.Point(318, 215);
+            this.numericUpDownCheckIn.Location = new System.Drawing.Point(318, 205);
             this.numericUpDownCheckIn.Maximum = new decimal(new int[] {
             23,
             0,
@@ -156,7 +156,7 @@
             // 
             // numericUpDownCheckOut
             // 
-            this.numericUpDownCheckOut.Location = new System.Drawing.Point(465, 215);
+            this.numericUpDownCheckOut.Location = new System.Drawing.Point(465, 205);
             this.numericUpDownCheckOut.Maximum = new decimal(new int[] {
             23,
             0,
@@ -203,7 +203,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(366, 217);
+            this.label6.Location = new System.Drawing.Point(366, 207);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(15, 13);
             this.label6.TabIndex = 24;
@@ -212,7 +212,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(513, 217);
+            this.label7.Location = new System.Drawing.Point(513, 207);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(15, 13);
             this.label7.TabIndex = 25;
@@ -220,7 +220,7 @@
             // 
             // buttonNew
             // 
-            this.buttonNew.Location = new System.Drawing.Point(356, 258);
+            this.buttonNew.Location = new System.Drawing.Point(356, 245);
             this.buttonNew.Name = "buttonNew";
             this.buttonNew.Size = new System.Drawing.Size(80, 30);
             this.buttonNew.TabIndex = 26;

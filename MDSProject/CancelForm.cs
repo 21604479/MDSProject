@@ -20,13 +20,20 @@ namespace MDSProject
         {
             InitializeComponent();
             hcontainer = new HealthITDBContainer1();
+            refreshListBox();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            selectedAppointment = (Appointment)listBoxAppointment.SelectedItem;
-            hcontainer.AppointmentSet.Remove(selectedAppointment);
-            refreshListBox();
+            if (listBoxAppointment.SelectedIndex >= 0)
+            {
+                selectedAppointment = (Appointment)listBoxAppointment.SelectedItem;
+                AppointmentDetailsForm newForm = new AppointmentDetailsForm(selectedAppointment);
+                newForm.ShowDialog();
+                refreshListBox()
+
+
+            }  
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)

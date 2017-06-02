@@ -85,5 +85,14 @@ namespace MDSProject
             labelDate.Text = "";
             labelHour.Text = "";
         }
+
+        public static void Main(Appointment selectedAppointment)
+        {
+
+            if (selectedAppointment.Date > DateTime.Today)
+            {
+                MessageBox.Show("Cancela o appointment");
+            }
+        }
     }
 }

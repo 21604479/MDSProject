@@ -10,7 +10,7 @@ namespace MDSProject
 {
         public override string ToString()
         {
-            return PatientName + " - " + Date.Date.ToString();
+            return PatientName + " - " + Date.Date.ToString("dd/MM/yyy") + " - " + Hour + "H";
         }
     }
 }

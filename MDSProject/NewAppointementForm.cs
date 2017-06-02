@@ -61,11 +61,11 @@ namespace MDSProject
             {
                 MessageBox.Show("There is already a registered appointment at this time.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }*/
-            else { 
+            else {
 
                 Appointment newAPP = new Appointment()
                 {
-                    
+                    Doctor = (Doctor)listBoxRegisteredDoctors.SelectedItem,
                     Hour = Decimal.ToInt32(numericUpDownHoras.Value),
                     PatientName = textBoxPatientName.Text,
                     Date = dateTimePickeAppointment.Value
@@ -84,7 +84,15 @@ namespace MDSProject
 
         private void refreshdoctors()
         {
+            listBoxRegisteredDoctors.Items.Clear();
             listBoxRegisteredDoctors.Items.AddRange(container.UserSet.OfType<Doctor>().ToArray());
+        }
+
+        private void listBoxRegisteredDoctors_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Doctor doctorselecionado = (Doctor)listBoxRegisteredDoctors.SelectedItem;
+
+            textBoxDoctorsName.Text = doctorselecionado.Name;
         }
     }
 }

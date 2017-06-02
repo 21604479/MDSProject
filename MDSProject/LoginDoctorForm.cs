@@ -46,6 +46,8 @@ namespace MDSProject
 
                 MessageBox.Show("Invalid Login!"); 
             }
+
+            Close();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)

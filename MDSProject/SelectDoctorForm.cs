@@ -29,6 +29,14 @@ namespace MDSProject
             }
         }
 
+        public int checkout
+        {
+            get
+            {
+                listBoxRegisteredDoctors.SelectedItem
+            }
+        }
+
         private void buttonSelectDoctor_Click(object sender, EventArgs e)
         {
 

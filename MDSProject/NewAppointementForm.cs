@@ -14,10 +14,16 @@ namespace MDSProject
     {
         HealthITDBContainer1 container;
 
+        public Appointment NewApp { get; private set; }
+
+        public Doctor NewDoctor { get; private set; }
+
         public NewAppointementForm()
         {
             InitializeComponent();
              container = new HealthITDBContainer1();
+
+            dateTimePickeAppointment.MinDate = DateTime.Today;
 
         }
 
@@ -33,47 +39,44 @@ namespace MDSProject
         }
 
 
-        private void buttonSelectDate_Click(object sender, EventArgs e)
-        {
-            SelectDateTimeForm selectdate = new SelectDateTimeForm(textBoxDoctorsName.Text);
-            DialogResult result = selectdate.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                numericUpDown1.Value = selectdate.horas;
-                textBoxDateTime.Text = selectdate.data.ToShortDateString();
-            }
-        }
-
         private void buttonConfirm_Click(object sender, EventArgs e)
         {
-            if (textBoxDoctorsName.Text.Length == 0 || textBoxDateTime.Text.Length == 0 || numericUpDown1.Value == 0 || textBoxPatientName.Text.Length == 0)
+            SelectDoctorForm selectdoctor = new SelectDoctorForm();
+
+            if (textBoxDoctorsName.Text.Length == 0)
             {
                 MessageBox.Show("Fill the blank spaces, Please.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else
+            else if (Decimal.ToInt32(numericUpDownHoras.Value) > selecdoctor.CheckOut)
             {
-                SelectDateTimeForm selectdate = new SelectDateTimeForm(textBoxDoctorsName.Text);
+                MessageBox.Show("The hour you picked for the appointment is superior to the doctor's check out hour.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (Decimal.ToInt32(numericUpDownHoras.Value) < NewDoctor.CheckIn)
+            {
+                MessageBox.Show("The hour you picked for the appointment is inferior to the doctor's check in hour.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            /*else if ()
+            {
+                MessageBox.Show("There is already a registered appointment at this time.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }*/
+            else { 
 
                 Appointment newAPP = new Appointment()
                 {
                     DoctorName = textBoxDoctorsName.Text,
-                    Hour = Decimal.ToInt32(numericUpDown1.Value),
+                    Hour = Decimal.ToInt32(numericUpDownHoras.Value),
                     PatientName = textBoxPatientName.Text,
-                    Date = selectdate.data
+                    Date = dateTimePickeAppointment.Value
                 };
                 container.AppointmentSet.Add(newAPP);
                 container.SaveChanges();
                 Close();
-
             }
-
 
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            MainMenuForm cancelar = new MainMenuForm();
-            cancelar.Show();
             this.Close();
         }
     }

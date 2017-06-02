@@ -33,11 +33,6 @@ namespace MDSProject
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(lb_appointments.SelectedItem != null)
@@ -45,15 +40,16 @@ namespace MDSProject
                 Appointment appointment = (Appointment)lb_appointments.SelectedItem;
                 txt_diagnosis.Enabled = true;
                 txt_symptoms.Enabled = true;
-                lbl_date.Text = appointment.Date.ToString();
+                lbl_date.Text = appointment.Date.ToString("dd/MM/yyyy");
                 lbl_doctor.Text = appointment.Doctor.ToString();
                 lbl_hour.Text = appointment.Hour.ToString();
                 lbl_patient.Text = appointment.PatientName.ToString();
-                if(appointment.ConsultationDet.Diagnostic.Length > 0 && appointment.ConsultationDet.Symptoms.Length > 0)
+
+                /*if(appointment.ConsultationDet.Diagnostic.Length < 0 && appointment.ConsultationDet.Symptoms.Length < 0)
                 {
                     txt_diagnosis.Text = appointment.ConsultationDet.Diagnostic;
                     txt_symptoms.Text = appointment.ConsultationDet.Symptoms;
-                }
+                }*/
             }
 
         }
@@ -74,14 +70,8 @@ namespace MDSProject
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void txt_symptoms_TextChanged(object sender, EventArgs e)
         {
             if(txt_diagnosis.Text.Length > 0 && txt_symptoms.Text.Length > 0)

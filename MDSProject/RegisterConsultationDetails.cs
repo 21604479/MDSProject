@@ -12,25 +12,24 @@ namespace MDSProject
 {
     public partial class RegisterConsultationDetails : Form
     {
+        HealthITDBContainer1 container = new HealthITDBContainer1();
+        
         public RegisterConsultationDetails()
         {
             InitializeComponent();
-            listBox1.Items.Add("Joana Paião");
-            listBox1.Items.Add("Tiago Foncseca");
-            listBox1.Items.Add("Vasco Leal");
-            listBox1.Items.Add("Walter Klit");
-
+            lb_appointments.Items.Clear();
+            lb_appointments.Items.AddRange(container.AppointmentSet.ToArray<Appointment>());
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             if(textBox1.Text.Length > 0)
             {
-                button3.Enabled = true;
+                btn_pesquisar.Enabled = true;
             }
             else
             {
-                button3.Enabled = false;
+                btn_pesquisar.Enabled = false;
             }
         }
 
@@ -41,17 +40,32 @@ namespace MDSProject
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            button1.Enabled = true;
+            if(lb_appointments.SelectedItem != null)
+            {
+                Appointment appointment = (Appointment)lb_appointments.SelectedItem;
+                txt_diagnosis.Enabled = true;
+                txt_symptoms.Enabled = true;
+                lbl_date.Text = appointment.Date.ToString();
+                lbl_doctor.Text = appointment.Doctor.ToString();
+                lbl_hour.Text = appointment.Hour.ToString();
+                lbl_patient.Text = appointment.PatientName.ToString();
+                if(appointment.ConsultationDet.Diagnostic.Length > 0 && appointment.ConsultationDet.Symptoms.Length > 0)
+                {
+                    txt_diagnosis.Text = appointment.ConsultationDet.Diagnostic;
+                    txt_symptoms.Text = appointment.ConsultationDet.Symptoms;
+                }
+            }
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
 
             string myString = textBox1.Text;
-            int index = listBox1.FindString(myString, -1);
+            int index = lb_appointments.FindString(myString, -1);
             if (index != -1)
             {
-                listBox1.SetSelected(index, true);
+                lb_appointments.SetSelected(index, true);
                 MessageBox.Show("Found the item \"" + myString + "\" at index: " + index);
             }
             else
@@ -61,6 +75,35 @@ namespace MDSProject
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_symptoms_TextChanged(object sender, EventArgs e)
+        {
+            if(txt_diagnosis.Text.Length > 0 && txt_symptoms.Text.Length > 0)
+            {
+                btn_Save.Enabled = true;
+            }
+        }
+
+        private void txt_diagnosis_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_diagnosis.Text.Length > 0 && txt_symptoms.Text.Length > 0)
+            {
+                btn_Save.Enabled = true;
+            }
+        }
+
+        private void btn_Save_Click(object sender, EventArgs e)
+        {
+            Appointment appointment = (Appointment)lb_appointments.SelectedItem;
+            appointment.ConsultationDet.Diagnostic = txt_diagnosis.Text;
+            appointment.ConsultationDet.Symptoms = txt_symptoms.Text;
+            container.SaveChanges();
         }
     }
 }

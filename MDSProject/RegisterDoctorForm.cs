@@ -46,31 +46,42 @@ namespace MDSProject
             {
                 MessageBox.Show("A doctor can't check out before check in", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            else if (textBoxUsername.Text.Length == 0 || textBoxPassword.Text.Length == 0)
+            {
+                MessageBox.Show("Please insert a username and password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
             else if ( listBoxDoctors.SelectedIndex != -1)
                 {
 
-                Doctor selectDoctor = (Doctor)listBoxDoctors.SelectedItem;
+                DialogResult result = MessageBox.Show("Are you sure you want to save?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                selectDoctor.Name = textBoxName.Text;
-                selectDoctor.Proficiency = comboBoxProficiency.Text;
-                selectDoctor.Ssn = textBoxSSN.Text;
-                selectDoctor.CheckIn = decimal.ToInt32(numericUpDownCheckIn.Value);
-                selectDoctor.CheckOut = decimal.ToInt32(numericUpDownCheckOut.Value);
+            if (result == DialogResult.Yes)
+                {
+                    Doctor selectDoctor = (Doctor)listBoxDoctors.SelectedItem;
 
-                container.SaveChanges();
-                refreshDoc();
+                    selectDoctor.Name = textBoxName.Text;
+                    selectDoctor.Proficiency = comboBoxProficiency.Text;
+                    selectDoctor.Ssn = textBoxSSN.Text;
+                    selectDoctor.CheckIn = decimal.ToInt32(numericUpDownCheckIn.Value);
+                    selectDoctor.CheckOut = decimal.ToInt32(numericUpDownCheckOut.Value);
 
-                clearInfo();
+                    container.SaveChanges();
+                    refreshDoc();
 
-                buttonRegister.Text = "Register";
+                    clearInfo();
+
+                    buttonRegister.Text = "Register";
+                }
+
             }
 
             else
             {
                 NewDoctor = new Doctor()
                 {
-                    
+                    Username = textBoxUsername.Text,
+                    Password = textBoxPassword.Text,
                     Name = textBoxName.Text,
                     Proficiency = comboBoxProficiency.Text,
                     Ssn = textBoxSSN.Text,
@@ -78,7 +89,7 @@ namespace MDSProject
                     CheckOut = decimal.ToInt32(numericUpDownCheckOut.Value),
                 };
 
-                //container.UserSet.Add(doctor);
+                container.UserSet.Add(NewDoctor);
                 container.SaveChanges();
                 refreshDoc();
 
@@ -105,6 +116,10 @@ namespace MDSProject
             comboBoxProficiency.SelectedIndex = -1;
             numericUpDownCheckIn.Value = 0;
             numericUpDownCheckOut.Value = 8;
+            textBoxUsername.Clear();
+            textBoxPassword.Clear();
+
+            textBoxUsername.ReadOnly = false;
 
             listBoxDoctors.SelectedIndex = -1;
         }
@@ -122,6 +137,11 @@ namespace MDSProject
                 comboBoxProficiency.Text = selectDoctor.Proficiency;
                 numericUpDownCheckIn.Value = selectDoctor.CheckIn;
                 numericUpDownCheckOut.Value = selectDoctor.CheckOut;
+                textBoxUsername.Text = selectDoctor.Username;
+                textBoxPassword.Text = selectDoctor.Password;
+
+                textBoxUsername.ReadOnly = true;
+
             }
             else if (selectDoctor == null)
             {

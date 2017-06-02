@@ -78,7 +78,7 @@ namespace MDSProject
                     CheckOut = decimal.ToInt32(numericUpDownCheckOut.Value),
                 };
 
-                container.UserSet.Add(doctor);
+                //container.UserSet.Add(doctor);
                 container.SaveChanges();
                 refreshDoc();
 

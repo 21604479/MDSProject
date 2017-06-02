@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.labelTitle = new System.Windows.Forms.Label();
-            this.buttonSelectDoctor = new System.Windows.Forms.Button();
             this.buttonConfirm = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.groupBoxDoctor = new System.Windows.Forms.GroupBox();
             this.textBoxDoctorsName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.numericUpDownHoras = new System.Windows.Forms.NumericUpDown();
+            this.dateTimePickeAppointment = new System.Windows.Forms.DateTimePicker();
             this.labelPatienceName = new System.Windows.Forms.Label();
             this.textBoxPatientName = new System.Windows.Forms.TextBox();
-            this.dateTimePickeAppointment = new System.Windows.Forms.DateTimePicker();
-            this.numericUpDownHoras = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
+            this.listBoxRegisteredDoctors = new System.Windows.Forms.ListBox();
             this.groupBoxDoctor.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHoras)).BeginInit();
@@ -55,16 +55,6 @@
             this.labelTitle.Size = new System.Drawing.Size(161, 24);
             this.labelTitle.TabIndex = 5;
             this.labelTitle.Text = "New Appointment";
-            // 
-            // buttonSelectDoctor
-            // 
-            this.buttonSelectDoctor.Location = new System.Drawing.Point(242, 17);
-            this.buttonSelectDoctor.Name = "buttonSelectDoctor";
-            this.buttonSelectDoctor.Size = new System.Drawing.Size(105, 23);
-            this.buttonSelectDoctor.TabIndex = 6;
-            this.buttonSelectDoctor.Text = "Select Doctor";
-            this.buttonSelectDoctor.UseVisualStyleBackColor = true;
-            this.buttonSelectDoctor.Click += new System.EventHandler(this.buttonSelectDoctor_Click);
             // 
             // buttonConfirm
             // 
@@ -88,7 +78,6 @@
             // 
             // groupBoxDoctor
             // 
-            this.groupBoxDoctor.Controls.Add(this.buttonSelectDoctor);
             this.groupBoxDoctor.Controls.Add(this.textBoxDoctorsName);
             this.groupBoxDoctor.Location = new System.Drawing.Point(12, 50);
             this.groupBoxDoctor.Name = "groupBoxDoctor";
@@ -103,7 +92,7 @@
             this.textBoxDoctorsName.Location = new System.Drawing.Point(11, 19);
             this.textBoxDoctorsName.Name = "textBoxDoctorsName";
             this.textBoxDoctorsName.ReadOnly = true;
-            this.textBoxDoctorsName.Size = new System.Drawing.Size(225, 13);
+            this.textBoxDoctorsName.Size = new System.Drawing.Size(336, 13);
             this.textBoxDoctorsName.TabIndex = 13;
             // 
             // groupBox1
@@ -117,6 +106,30 @@
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Appointment Date ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(293, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(15, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "H";
+            // 
+            // numericUpDownHoras
+            // 
+            this.numericUpDownHoras.Location = new System.Drawing.Point(242, 27);
+            this.numericUpDownHoras.Name = "numericUpDownHoras";
+            this.numericUpDownHoras.Size = new System.Drawing.Size(45, 20);
+            this.numericUpDownHoras.TabIndex = 2;
+            // 
+            // dateTimePickeAppointment
+            // 
+            this.dateTimePickeAppointment.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickeAppointment.Location = new System.Drawing.Point(11, 27);
+            this.dateTimePickeAppointment.Name = "dateTimePickeAppointment";
+            this.dateTimePickeAppointment.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickeAppointment.TabIndex = 1;
             // 
             // labelPatienceName
             // 
@@ -134,35 +147,20 @@
             this.textBoxPatientName.Size = new System.Drawing.Size(342, 20);
             this.textBoxPatientName.TabIndex = 12;
             // 
-            // dateTimePickeAppointment
+            // listBoxRegisteredDoctors
             // 
-            this.dateTimePickeAppointment.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickeAppointment.Location = new System.Drawing.Point(11, 27);
-            this.dateTimePickeAppointment.Name = "dateTimePickeAppointment";
-            this.dateTimePickeAppointment.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePickeAppointment.TabIndex = 1;
-            // 
-            // numericUpDownHoras
-            // 
-            this.numericUpDownHoras.Location = new System.Drawing.Point(242, 27);
-            this.numericUpDownHoras.Name = "numericUpDownHoras";
-            this.numericUpDownHoras.Size = new System.Drawing.Size(45, 20);
-            this.numericUpDownHoras.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(293, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(15, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "H";
+            this.listBoxRegisteredDoctors.FormattingEnabled = true;
+            this.listBoxRegisteredDoctors.Location = new System.Drawing.Point(371, 50);
+            this.listBoxRegisteredDoctors.Name = "listBoxRegisteredDoctors";
+            this.listBoxRegisteredDoctors.Size = new System.Drawing.Size(120, 95);
+            this.listBoxRegisteredDoctors.TabIndex = 13;
             // 
             // NewAppointementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(371, 318);
+            this.ClientSize = new System.Drawing.Size(499, 318);
+            this.Controls.Add(this.listBoxRegisteredDoctors);
             this.Controls.Add(this.textBoxPatientName);
             this.Controls.Add(this.labelPatienceName);
             this.Controls.Add(this.groupBox1);
@@ -185,7 +183,6 @@
         #endregion
 
         private System.Windows.Forms.Label labelTitle;
-        private System.Windows.Forms.Button buttonSelectDoctor;
         private System.Windows.Forms.Button buttonConfirm;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.GroupBox groupBoxDoctor;
@@ -196,5 +193,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePickeAppointment;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numericUpDownHoras;
+        private System.Windows.Forms.ListBox listBoxRegisteredDoctors;
     }
 }

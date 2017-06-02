@@ -138,12 +138,6 @@
     <Compile Include="RegisterDoctorForm.Designer.cs">
       <DependentUpon>RegisterDoctorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SelectDoctorForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SelectDoctorForm.Designer.cs">
-      <DependentUpon>SelectDoctorForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="User.cs">
       <DependentUpon>HealthITDB.tt</DependentUpon>
     </Compile>
@@ -179,9 +173,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterDoctorForm.resx">
       <DependentUpon>RegisterDoctorForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SelectDoctorForm.resx">
-      <DependentUpon>SelectDoctorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="HealthITDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

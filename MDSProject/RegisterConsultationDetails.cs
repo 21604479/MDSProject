@@ -12,23 +12,25 @@ namespace MDSProject
 {
     public partial class RegisterConsultationDetails : Form
     {
-        HealthITDBContainer1 container = new HealthITDBContainer1();
         public RegisterConsultationDetails()
         {
             InitializeComponent();
-            lb_appointments.Items.Clear();
-            lb_appointments.Items.AddRange(container.AppointmentSet.ToArray<Appointment>());
+            listBox1.Items.Add("Joana Paião");
+            listBox1.Items.Add("Tiago Foncseca");
+            listBox1.Items.Add("Vasco Leal");
+            listBox1.Items.Add("Walter Klit");
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             if(textBox1.Text.Length > 0)
             {
-                btn_pesquisar.Enabled = true;
+                button3.Enabled = true;
             }
             else
             {
-                btn_pesquisar.Enabled = false;
+                button3.Enabled = false;
             }
         }
 
@@ -39,28 +41,17 @@ namespace MDSProject
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(lb_appointments.SelectedItem != null)
-            {
-                Appointment appointment = (Appointment)lb_appointments.SelectedItem;
-                txt_diagnosis.Enabled = true;
-                txt_symptoms.Enabled = true;
-                lbl_date.Text = appointment.Date.ToString();
-                lbl_doctor.Text = appointment.Doctor.ToString();
-                lbl_hour.Text = appointment.Hour.ToString();
-                lbl_patient.Text = appointment.PatientName.ToString();
-
-            }
-
+            button1.Enabled = true;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
 
             string myString = textBox1.Text;
-            int index = lb_appointments.FindString(myString, -1);
+            int index = listBox1.FindString(myString, -1);
             if (index != -1)
             {
-                lb_appointments.SetSelected(index, true);
+                listBox1.SetSelected(index, true);
                 MessageBox.Show("Found the item \"" + myString + "\" at index: " + index);
             }
             else
@@ -70,11 +61,6 @@ namespace MDSProject
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -23,13 +23,20 @@ namespace MDSProject
             refreshListBox();
         }
 
-        private void buttonCancel_Click(object sender, EventArgs e)
+        private void buttonSelect_Click(object sender, EventArgs e)
         {
-            selectedAppointment = (Appointment)listBoxAppointment.SelectedItem;
-            labelDoctorName.Text = selectedAppointment.Doctor.Name;
-            labelPacientName.Text = selectedAppointment.PatientName;
-            labelDate.Text = selectedAppointment.Date.ToString();
-            labelHour.Text = selectedAppointment.Hour.ToString();
+            if (listBoxAppointment.SelectedIndex != -1)
+            {
+                selectedAppointment = (Appointment)listBoxAppointment.SelectedItem;
+                labelDoctorName.Text = selectedAppointment.Doctor.Name;
+                labelPacientName.Text = selectedAppointment.PatientName;
+                labelDate.Text = selectedAppointment.Date.ToString();
+                labelHour.Text = selectedAppointment.Hour.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Select one appointment, please.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)
@@ -56,13 +63,13 @@ namespace MDSProject
             listBoxAppointment.Items.AddRange(hcontainer.AppointmentSet.ToArray());
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonCancelAppointment_Click(object sender, EventArgs e)
         {
-            if (listBoxAppointment.SelectedIndex >= 0)
+            if (listBoxAppointment.SelectedIndex != -1)
             {
                 if (selectedAppointment.Date > DateTime.Today)
                 {
-                    if (MessageBox.Show("Are you sure to cancel?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("Are you sure you want to cancel this appointment?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         hcontainer.AppointmentSet.Remove(selectedAppointment);
                         hcontainer.SaveChanges();
@@ -75,6 +82,10 @@ namespace MDSProject
                     MessageBox.Show("Impossible to take this action");
                 }
             }
+            else
+            {
+                MessageBox.Show("No Appoitment was selected.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void limparCampos()
@@ -86,13 +97,5 @@ namespace MDSProject
             labelHour.Text = "";
         }
 
-        public static void Main(Appointment selectedAppointment)
-        {
-
-            if (selectedAppointment.Date > DateTime.Today)
-            {
-                MessageBox.Show("Cancela o appointment");
-            }
-        }
     }
 }

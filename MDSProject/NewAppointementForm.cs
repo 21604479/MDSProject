@@ -71,6 +71,7 @@ namespace MDSProject
                     PatientName = textBoxPatientName.Text,
                     Date = dateTimePickeAppointment.Value
                 };
+                MessageBox.Show("The appointment was saved with success.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 container.AppointmentSet.Add(newAPP);
                 container.SaveChanges();
                 Close();
@@ -87,6 +88,11 @@ namespace MDSProject
         {
             listBoxRegisteredDoctors.Items.Clear();
             listBoxRegisteredDoctors.Items.AddRange(container.UserSet.OfType<Doctor>().ToArray());
+        }
+
+        private void listBoxRegisteredDoctors_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBoxDoctorsName.Text = listBoxRegisteredDoctors.SelectedItem.ToString(); 
         }
     }
 }

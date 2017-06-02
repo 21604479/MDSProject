@@ -69,7 +69,7 @@ namespace MDSProject
             {
                 if (selectedAppointment.Date > DateTime.Today)
                 {
-                    if (MessageBox.Show("Are you sure to cancel?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("Are you sure you want to cancel this appointment?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         hcontainer.AppointmentSet.Remove(selectedAppointment);
                         hcontainer.SaveChanges();

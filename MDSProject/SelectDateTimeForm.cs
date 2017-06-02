@@ -13,12 +13,10 @@ namespace MDSProject
     public partial class SelectDateTimeForm : Form
     {
         HealthITDBContainer1 container;
-        public int horas;
-        public DateTime date;
 
         public Doctor NewDoctor { get; private set; }
 
-        /*public decimal horas
+        public decimal horas
         {
             get
             {
@@ -32,9 +30,9 @@ namespace MDSProject
             {
                 return dateTimePickerAppointment.Value;
             }
-        }*/
+        }
 
-        public SelectDateTimeForm(DateTime date, int horas)
+        public SelectDateTimeForm(string text)
         {
             InitializeComponent();
 
@@ -59,10 +57,9 @@ namespace MDSProject
             }
             else
             {*/
-                date =  dateTimePickerAppointment.Value;
-                horas = (int)numericUpDown1.Value;
-               
-
+               DateTime date =  dateTimePickerAppointment.Value;
+                date = data;
+                numericUpDown1.Value = horas;
                 DialogResult = DialogResult.OK;
                 Close();
             /*}

@@ -31,7 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.listBoxAppointment = new System.Windows.Forms.ListBox();
             this.buttonSearch = new System.Windows.Forms.Button();
-            this.buttonCancel = new System.Windows.Forms.Button();
+            this.buttonSelect = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.labelHour = new System.Windows.Forms.Label();
@@ -42,7 +42,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonCancelAppointment = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +61,7 @@
             // 
             this.listBoxAppointment.FormattingEnabled = true;
             this.listBoxAppointment.Location = new System.Drawing.Point(9, 30);
-            this.listBoxAppointment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBoxAppointment.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxAppointment.Name = "listBoxAppointment";
             this.listBoxAppointment.Size = new System.Drawing.Size(188, 212);
             this.listBoxAppointment.TabIndex = 1;
@@ -69,7 +69,7 @@
             // buttonSearch
             // 
             this.buttonSearch.Location = new System.Drawing.Point(9, 301);
-            this.buttonSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSearch.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(68, 23);
             this.buttonSearch.TabIndex = 2;
@@ -77,22 +77,22 @@
             this.buttonSearch.UseVisualStyleBackColor = true;
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
-            // buttonCancel
+            // buttonSelect
             // 
-            this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.buttonCancel.Location = new System.Drawing.Point(128, 301);
-            this.buttonCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(68, 23);
-            this.buttonCancel.TabIndex = 3;
-            this.buttonCancel.Text = "Select";
-            this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            this.buttonSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.buttonSelect.Location = new System.Drawing.Point(128, 301);
+            this.buttonSelect.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSelect.Name = "buttonSelect";
+            this.buttonSelect.Size = new System.Drawing.Size(68, 23);
+            this.buttonSelect.TabIndex = 3;
+            this.buttonSelect.Text = "Select";
+            this.buttonSelect.UseVisualStyleBackColor = true;
+            this.buttonSelect.Click += new System.EventHandler(this.buttonSelect_Click);
             // 
             // textBoxSearch
             // 
             this.textBoxSearch.Location = new System.Drawing.Point(9, 259);
-            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(188, 20);
             this.textBoxSearch.TabIndex = 5;
@@ -109,9 +109,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Location = new System.Drawing.Point(200, 30);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(299, 211);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
@@ -193,30 +193,30 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Pacient Name:";
             // 
-            // button1
+            // buttonCancelAppointment
             // 
-            this.button1.Location = new System.Drawing.Point(292, 275);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 30);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Cancel Appointment";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonCancelAppointment.Location = new System.Drawing.Point(292, 275);
+            this.buttonCancelAppointment.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonCancelAppointment.Name = "buttonCancelAppointment";
+            this.buttonCancelAppointment.Size = new System.Drawing.Size(120, 30);
+            this.buttonCancelAppointment.TabIndex = 10;
+            this.buttonCancelAppointment.Text = "Cancel Appointment";
+            this.buttonCancelAppointment.UseVisualStyleBackColor = true;
+            this.buttonCancelAppointment.Click += new System.EventHandler(this.buttonCancelAppointment_Click);
             // 
             // CancelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(508, 333);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonCancelAppointment);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBoxSearch);
-            this.Controls.Add(this.buttonCancel);
+            this.Controls.Add(this.buttonSelect);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.listBoxAppointment);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CancelForm";
             this.Text = "Cancel Appointment";
             this.groupBox1.ResumeLayout(false);
@@ -231,7 +231,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listBoxAppointment;
         private System.Windows.Forms.Button buttonSearch;
-        private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.Button buttonSelect;
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label labelHour;
@@ -242,6 +242,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonCancelAppointment;
     }
 }

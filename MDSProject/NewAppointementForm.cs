@@ -71,6 +71,7 @@ namespace MDSProject
                     PatientName = textBoxPatientName.Text,
                     Date = dateTimePickeAppointment.Value
                 };
+                MessageBox.Show("The appointment was saved with success.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 container.AppointmentSet.Add(newAPP);
                 container.SaveChanges();
                 Close();

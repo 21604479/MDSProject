@@ -4,11 +4,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace MDSUnitTest
 {
     [TestClass]
-    public class UnitTest1
+    public class UnitTestDoc
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Regist_doc()
         {
+            Doctor doc = new Doctor();
         }
     }
 }

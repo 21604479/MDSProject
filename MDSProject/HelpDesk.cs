@@ -12,21 +12,10 @@ namespace MDSProject
     using System;
     using System.Collections.Generic;
     
-    public partial class Doctor : User
+    public partial class HelpDesk : User
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Doctor()
-        {
-            this.Appointment = new HashSet<Appointment>();
-        }
-    
         public string Name { get; set; }
-        public string Proficiency { get; set; }
-        public string Ssn { get; set; }
         public int CheckIn { get; set; }
         public int CheckOut { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Appointment> Appointment { get; set; }
     }
 }

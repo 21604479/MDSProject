@@ -5,11 +5,15 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="17945d8675d84e61acee56375c62e15c" Name="Diagram1" >
-        <EntityTypeShape EntityType="HealthITDB.Doctor" Width="1.5" PointX="1.25" PointY="1.375" />
-        <EntityTypeShape EntityType="HealthITDB.Appointment" Width="1.5" PointX="3.625" PointY="1.375" />
-        <EntityTypeShape EntityType="HealthITDB.ConsultationDet" Width="1.5" PointX="6.5" PointY="1.375" />
-        <AssociationConnector Association="HealthITDB.AppointmentConsultationDet" />
+        <EntityTypeShape EntityType="HealthITDB.Doctor" Width="1.5" PointX="1.75" PointY="2.625" />
+        <EntityTypeShape EntityType="HealthITDB.Appointment" Width="1.5" PointX="9.125" PointY="2.625" />
+        <EntityTypeShape EntityType="HealthITDB.ConsultationDet" Width="1.5" PointX="3.75" PointY="2.875" />
+        <EntityTypeShape EntityType="HealthITDB.User" Width="1.5" PointX="3.5" PointY="0.5" />
+        <InheritanceConnector EntityType="HealthITDB.Doctor" />
+        <EntityTypeShape EntityType="HealthITDB.HelpDesk" Width="1.5" PointX="6.875" PointY="2.125" />
+        <InheritanceConnector EntityType="HealthITDB.HelpDesk" />
         <AssociationConnector Association="HealthITDB.DoctorAppointment" />
+        <AssociationConnector Association="HealthITDB.ConsultationDetAppointment" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

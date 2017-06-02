@@ -13,6 +13,8 @@ namespace MDSProject
     public partial class RegisterDoctorForm : Form
     {
 
+        public Doctor NewDoctor { get; private set; }
+
         HealthITDBContainer1 container;
 
         public RegisterDoctorForm()
@@ -66,8 +68,9 @@ namespace MDSProject
 
             else
             {
-                Doctor newDoctor = new Doctor()
+                NewDoctor = new Doctor()
                 {
+                    
                     Name = textBoxName.Text,
                     Proficiency = comboBoxProficiency.Text,
                     Ssn = textBoxSSN.Text,
@@ -75,7 +78,7 @@ namespace MDSProject
                     CheckOut = decimal.ToInt32(numericUpDownCheckOut.Value),
                 };
 
-                container.DoctorSet.Add(newDoctor);
+                container.UserSet.Add(doctor);
                 container.SaveChanges();
                 refreshDoc();
 
@@ -86,7 +89,7 @@ namespace MDSProject
         private void refreshDoc()
         {
             listBoxDoctors.Items.Clear();
-            listBoxDoctors.Items.AddRange(container.DoctorSet.ToArray());
+            listBoxDoctors.Items.AddRange(container.UserSet.OfType<Doctor>().ToArray());
         }
 
         private void buttonNew_Click(object sender, EventArgs e)

@@ -45,11 +45,18 @@ namespace MDSProject
                 lbl_hour.Text = appointment.Hour.ToString();
                 lbl_patient.Text = appointment.PatientName.ToString();
 
-                /*if(appointment.ConsultationDet.Diagnostic.Length < 0 && appointment.ConsultationDet.Symptoms.Length < 0)
+                if (appointment.ConsultationDet != null)
                 {
                     txt_diagnosis.Text = appointment.ConsultationDet.Diagnostic;
                     txt_symptoms.Text = appointment.ConsultationDet.Symptoms;
-                }*/
+                }
+                else 
+                {
+                    txt_diagnosis.Text = "";
+                    txt_symptoms.Text = "";
+
+                    btn_Save.Enabled = false;
+                }
             }
 
         }
@@ -94,6 +101,9 @@ namespace MDSProject
             ConsultationDet condet = new ConsultationDet();
             condet.Diagnostic = txt_diagnosis.Text;
             condet.Symptoms = txt_symptoms.Text;
+
+            appointment.ConsultationDet = condet;
+
             container.SaveChanges();
         }
     }

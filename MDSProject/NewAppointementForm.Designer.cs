@@ -154,7 +154,7 @@
             this.listBoxRegisteredDoctors.Name = "listBoxRegisteredDoctors";
             this.listBoxRegisteredDoctors.Size = new System.Drawing.Size(120, 95);
             this.listBoxRegisteredDoctors.TabIndex = 13;
-            //this.listBoxRegisteredDoctors.SelectedIndexChanged += new System.EventHandler(this.listBoxRegisteredDoctors_SelectedIndexChanged);
+            this.listBoxRegisteredDoctors.SelectedIndexChanged += new System.EventHandler(this.listBoxRegisteredDoctors_SelectedIndexChanged);
             // 
             // NewAppointementForm
             // 

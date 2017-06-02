@@ -88,5 +88,10 @@ namespace MDSProject
             listBoxRegisteredDoctors.Items.Clear();
             listBoxRegisteredDoctors.Items.AddRange(container.UserSet.OfType<Doctor>().ToArray());
         }
+
+        private void listBoxRegisteredDoctors_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBoxDoctorsName.Text = listBoxRegisteredDoctors.SelectedItem.ToString(); 
+        }
     }
 }

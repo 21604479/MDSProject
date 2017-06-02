@@ -40,28 +40,31 @@ namespace MDSProject
             if (result == DialogResult.OK)
             {
                 numericUpDown1.Value = selectdate.horas;
-
+                textBoxDateTime.Text = selectdate.data.ToShortDateString();
             }
         }
 
         private void buttonConfirm_Click(object sender, EventArgs e)
         {
-            if (textBoxDoctorsName.Text.Length == 0 || /*textBoxDateTime.Text.Length == 0 ||*/ textBox1.Text.Length == 0)
+            if (textBoxDoctorsName.Text.Length == 0 || /*textBoxDateTime.Text.Length == 0 ||*/ textBoxPatientName.Text.Length == 0)
             {
                 MessageBox.Show("Fill the blank spaces, Please.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
+                SelectDateTimeForm selectdate = new SelectDateTimeForm(textBoxDoctorsName.Text);
+
                 Appointment newAPP = new Appointment()
                 {
                     DoctorName = textBoxDoctorsName.Text,
-                    //Hour = labelHour.Text,
-                    
-
-                    //Date = (textBoxDateTime.Text),
-
-
+                    Hour = Decimal.ToInt32(numericUpDown1.Value),
+                    PatientName = textBoxPatientName.Text,
+                    Date = selectdate.data
                 };
+                container.AppointmentSet.Add(newAPP);
+                container.SaveChanges();
+                Close();
+
             }
 
 

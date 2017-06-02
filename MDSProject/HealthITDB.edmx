@@ -38,8 +38,7 @@
     <Property Name="DoctorName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Date" Type="datetime" Nullable="false" />
     <Property Name="Hour" Type="int" Nullable="false" />
-    <Property Name="ConsultationDet_Id" Type="int" Nullable="false" />
-    <Property Name="Doctor_Id" Type="int" Nullable="false" />
+    <Property Name="Doctor_Id" Type="int" Nullable="true" />
   </EntityType>
   <EntityType Name="ConsultationDetSet">
     <Key>
@@ -48,21 +47,22 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Symptoms" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Diagnostic" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Appointment_Id" Type="int" Nullable="true" />
   </EntityType>
   <Association Name="AppointmentConsultationDet">
-    <End Role="Appointment" Type="HealthITDB.Store.AppointmentSet" Multiplicity="*" />
-    <End Role="ConsultationDet" Type="HealthITDB.Store.ConsultationDetSet" Multiplicity="1" />
+    <End Role="Appointment" Type="HealthITDB.Store.AppointmentSet" Multiplicity="0..1" />
+    <End Role="ConsultationDet" Type="HealthITDB.Store.ConsultationDetSet" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="ConsultationDet">
+      <Principal Role="Appointment">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="Appointment">
-        <PropertyRef Name="ConsultationDet_Id" />
+      <Dependent Role="ConsultationDet">
+        <PropertyRef Name="Appointment_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="DoctorAppointment">
-    <End Role="Doctor" Type="HealthITDB.Store.DoctorSet" Multiplicity="1" />
+    <End Role="Doctor" Type="HealthITDB.Store.DoctorSet" Multiplicity="0..1" />
     <End Role="Appointment" Type="HealthITDB.Store.AppointmentSet" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Doctor">
@@ -124,11 +124,11 @@
           <NavigationProperty Name="Appointment" Relationship="HealthITDB.AppointmentConsultationDet" FromRole="ConsultationDet" ToRole="Appointment" />
         </EntityType>
         <Association Name="AppointmentConsultationDet">
-          <End Type="HealthITDB.Appointment" Role="Appointment" Multiplicity="1" />
-          <End Type="HealthITDB.ConsultationDet" Role="ConsultationDet" Multiplicity="1" />
+          <End Type="HealthITDB.Appointment" Role="Appointment" Multiplicity="0..1" />
+          <End Type="HealthITDB.ConsultationDet" Role="ConsultationDet" Multiplicity="0..1" />
         </Association>
         <Association Name="DoctorAppointment">
-          <End Type="HealthITDB.Doctor" Role="Doctor" Multiplicity="1" />
+          <End Type="HealthITDB.Doctor" Role="Doctor" Multiplicity="0..1" />
           <End Type="HealthITDB.Appointment" Role="Appointment" Multiplicity="*" />
         </Association>
       </Schema>
@@ -169,13 +169,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="AppointmentConsultationDet" TypeName="HealthITDB.AppointmentConsultationDet" StoreEntitySet="AppointmentSet">
-      <EndProperty Name="ConsultationDet">
-        <ScalarProperty Name="Id" ColumnName="ConsultationDet_Id" />
-      </EndProperty>
+    <AssociationSetMapping Name="AppointmentConsultationDet" TypeName="HealthITDB.AppointmentConsultationDet" StoreEntitySet="ConsultationDetSet">
       <EndProperty Name="Appointment">
+        <ScalarProperty Name="Id" ColumnName="Appointment_Id" />
+      </EndProperty>
+      <EndProperty Name="ConsultationDet">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
+      <Condition ColumnName="Appointment_Id" IsNull="false" />
     </AssociationSetMapping>
     <AssociationSetMapping Name="DoctorAppointment" TypeName="HealthITDB.DoctorAppointment" StoreEntitySet="AppointmentSet">
       <EndProperty Name="Doctor">
@@ -184,6 +185,7 @@
       <EndProperty Name="Appointment">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
+      <Condition ColumnName="Doctor_Id" IsNull="false" />
     </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>

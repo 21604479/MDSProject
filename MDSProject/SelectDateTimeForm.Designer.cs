@@ -44,7 +44,7 @@
             // 
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.Location = new System.Drawing.Point(93, 9);
+            this.labelTitle.Location = new System.Drawing.Point(57, 9);
             this.labelTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(190, 24);
@@ -81,7 +81,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(250, 94);
+            this.label3.Location = new System.Drawing.Point(200, 93);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 13);
             this.label3.TabIndex = 11;
@@ -90,7 +90,7 @@
             // dateTimePickerAppointment
             // 
             this.dateTimePickerAppointment.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerAppointment.Location = new System.Drawing.Point(112, 87);
+            this.dateTimePickerAppointment.Location = new System.Drawing.Point(51, 91);
             this.dateTimePickerAppointment.MinDate = new System.DateTime(2017, 5, 19, 10, 27, 50, 0);
             this.dateTimePickerAppointment.Name = "dateTimePickerAppointment";
             this.dateTimePickerAppointment.RightToLeftLayout = true;
@@ -100,7 +100,7 @@
             // 
             // buttonConfirm
             // 
-            this.buttonConfirm.Location = new System.Drawing.Point(306, 136);
+            this.buttonConfirm.Location = new System.Drawing.Point(229, 142);
             this.buttonConfirm.Name = "buttonConfirm";
             this.buttonConfirm.Size = new System.Drawing.Size(75, 23);
             this.buttonConfirm.TabIndex = 13;
@@ -110,7 +110,12 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(290, 92);
+            this.numericUpDown1.Location = new System.Drawing.Point(239, 91);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(44, 20);
             this.numericUpDown1.TabIndex = 14;
@@ -118,7 +123,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(340, 93);
+            this.label4.Location = new System.Drawing.Point(289, 93);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(15, 13);
             this.label4.TabIndex = 15;
@@ -128,7 +133,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(393, 177);
+            this.ClientSize = new System.Drawing.Size(324, 177);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.buttonConfirm);

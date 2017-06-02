@@ -25,8 +25,6 @@ namespace MDSProject
 
         }
 
-        //public DoctorDet newDoctor;
-
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();

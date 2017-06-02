@@ -24,6 +24,14 @@ namespace MDSProject
             }
         }
 
+        public DateTime data
+        {
+            get
+            {
+                return dateTimePickerAppointment.Value;
+            }
+        }
+
         public SelectDateTimeForm(string text)
         {
             InitializeComponent();
@@ -49,7 +57,8 @@ namespace MDSProject
             }
             else
             {*/
-                
+               DateTime date =  dateTimePickerAppointment.Value;
+                date = data;
                 numericUpDown1.Value = horas;
                 DialogResult = DialogResult.OK;
                 Close();

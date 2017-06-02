@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/26/2017 09:38:23
+-- Date Created: 06/02/2017 09:17:13
 -- Generated from EDMX file: C:\Users\DIOGO\Source\Repos\MDSProject\MDSProject\HealthITDB.edmx
 -- --------------------------------------------------
 
@@ -60,8 +60,7 @@ CREATE TABLE [dbo].[AppointmentSet] (
     [DoctorName] nvarchar(max)  NOT NULL,
     [Date] datetime  NOT NULL,
     [Hour] int  NOT NULL,
-    [ConsultationDet_Id] int  NOT NULL,
-    [Doctor_Id] int  NOT NULL
+    [Doctor_Id] int  NULL
 );
 GO
 
@@ -69,7 +68,8 @@ GO
 CREATE TABLE [dbo].[ConsultationDetSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Symptoms] nvarchar(max)  NOT NULL,
-    [Diagnostic] nvarchar(max)  NOT NULL
+    [Diagnostic] nvarchar(max)  NOT NULL,
+    [Appointment_Id] int  NULL
 );
 GO
 
@@ -99,19 +99,19 @@ GO
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
 
--- Creating foreign key on [ConsultationDet_Id] in table 'AppointmentSet'
-ALTER TABLE [dbo].[AppointmentSet]
+-- Creating foreign key on [Appointment_Id] in table 'ConsultationDetSet'
+ALTER TABLE [dbo].[ConsultationDetSet]
 ADD CONSTRAINT [FK_AppointmentConsultationDet]
-    FOREIGN KEY ([ConsultationDet_Id])
-    REFERENCES [dbo].[ConsultationDetSet]
+    FOREIGN KEY ([Appointment_Id])
+    REFERENCES [dbo].[AppointmentSet]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_AppointmentConsultationDet'
 CREATE INDEX [IX_FK_AppointmentConsultationDet]
-ON [dbo].[AppointmentSet]
-    ([ConsultationDet_Id]);
+ON [dbo].[ConsultationDetSet]
+    ([Appointment_Id]);
 GO
 
 -- Creating foreign key on [Doctor_Id] in table 'AppointmentSet'

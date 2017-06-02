@@ -1,5 +1,6 @@
-﻿+using System;
+﻿
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace MDSUnitTest
 {
@@ -9,7 +10,7 @@ namespace MDSUnitTest
         [TestMethod]
         public void Regist_doc()
         {
-            Doctor doc = new Doctor();
+            //Doctor doc = new Doctor();
         }
     }
 }

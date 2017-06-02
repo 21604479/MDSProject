@@ -28,7 +28,7 @@ namespace MDSProject
             Close();
         }
 
-        private void buttonCancel_Click(object sender, EventArgs e)
+        public void buttonCancel_Click(object sender, EventArgs e)
         {
             if (selectedAppointment.Date > DateTime.Today)
             {

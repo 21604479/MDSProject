@@ -39,7 +39,9 @@ namespace MDSProject
                 //Se os dados correspondem aos da base de dados então vai devolver a vista.
                 Doctor userSelecionado = utilizadores.First<Doctor>();
                 RegisterConsultationDetails newVista = new RegisterConsultationDetails();
-                newVista.ShowDialog();
+                newVista.Show();
+
+                Close();
             }
             catch (Exception)
             {

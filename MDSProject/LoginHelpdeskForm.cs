@@ -38,7 +38,9 @@ namespace MDSProject
                 //Se os dados correspondem aos da base de dados então vai devolver a vista.
                 HelpDesk userSelecionado = utilizadores.First<HelpDesk>();
                 MainMenuForm newVista = new MainMenuForm();
-                newVista.ShowDialog();
+                newVista.Show();
+
+                Close();
             }
             catch (Exception)
             {
@@ -46,7 +48,7 @@ namespace MDSProject
                 MessageBox.Show("Invalid Login!"); ;
             }
 
-            Close();
+            
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)

@@ -77,7 +77,7 @@ namespace MDSProject
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Close();
+            Application.Exit();
         }
         private void txt_symptoms_TextChanged(object sender, EventArgs e)
         {

@@ -32,6 +32,7 @@ namespace MDSProject
 
         private void buttonConfirm_Click(object sender, EventArgs e)
         {
+
             Doctor doctorselecionado = (Doctor)listBoxRegisteredDoctors.SelectedItem;
 
             if (listBoxRegisteredDoctors.SelectedIndex != -1)
@@ -61,18 +62,21 @@ namespace MDSProject
             {
                 MessageBox.Show("There is already a registered appointment at this time.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }*/
-            else { 
-
-                Appointment newAPP = new Appointment()
+            else {
+                if (MessageBox.Show("Are you sure you want to schedule the appointment?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    
-                    Hour = Decimal.ToInt32(numericUpDownHoras.Value),
-                    PatientName = textBoxPatientName.Text,
-                    Date = dateTimePickeAppointment.Value
-                };
-                container.AppointmentSet.Add(newAPP);
-                container.SaveChanges();
-                Close();
+
+                    Appointment newAPP = new Appointment()
+                    {
+
+                        Hour = Decimal.ToInt32(numericUpDownHoras.Value),
+                        PatientName = textBoxPatientName.Text,
+                        Date = dateTimePickeAppointment.Value.Date
+                    };
+                    container.AppointmentSet.Add(newAPP);
+                    container.SaveChanges();
+                    Close();
+                }
             }
 
         }
@@ -84,7 +88,17 @@ namespace MDSProject
 
         private void refreshdoctors()
         {
+
+            listBoxRegisteredDoctors.Items.Clear();
             listBoxRegisteredDoctors.Items.AddRange(container.UserSet.OfType<Doctor>().ToArray());
+        }
+
+        private void listBoxRegisteredDoctors_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            Doctor doctorselecionado = (Doctor)listBoxRegisteredDoctors.SelectedItem;
+
+            textBoxDoctorsName.Text = doctorselecionado.Name;
         }
     }
 }

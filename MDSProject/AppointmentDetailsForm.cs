@@ -35,6 +35,7 @@ namespace MDSProject
                 if (MessageBox.Show("Are you sure to cancel?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     hcontainer.AppointmentSet.Remove(selectedAppointment);
+                    hcontainer.SaveChanges();
                 }
             }
             else

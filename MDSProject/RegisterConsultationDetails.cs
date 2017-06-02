@@ -13,6 +13,7 @@ namespace MDSProject
     public partial class RegisterConsultationDetails : Form
     {
         HealthITDBContainer1 container = new HealthITDBContainer1();
+        
         public RegisterConsultationDetails()
         {
             InitializeComponent();
@@ -83,6 +84,22 @@ namespace MDSProject
             {
                 btn_Save.Enabled = true;
             }
+        }
+
+        private void txt_diagnosis_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_diagnosis.Text.Length > 0 && txt_symptoms.Text.Length > 0)
+            {
+                btn_Save.Enabled = true;
+            }
+        }
+
+        private void btn_Save_Click(object sender, EventArgs e)
+        {
+            Appointment appointment = (Appointment)lb_appointments.SelectedItem;
+            appointment.ConsultationDet.Diagnostic = txt_diagnosis.Text;
+            appointment.ConsultationDet.Symptoms = txt_symptoms.Text;
+            container.SaveChanges();
         }
     }
 }

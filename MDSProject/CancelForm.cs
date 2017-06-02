@@ -25,15 +25,11 @@ namespace MDSProject
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            if (listBoxAppointment.SelectedIndex >= 0)
-            {
-                selectedAppointment = (Appointment)listBoxAppointment.SelectedItem;
-                AppointmentDetailsForm newForm = new AppointmentDetailsForm(selectedAppointment);
-                newForm.ShowDialog();
-                refreshListBox();
-
-
-            }  
+            selectedAppointment = (Appointment)listBoxAppointment.SelectedItem;
+            labelDoctorName.Text = selectedAppointment.Doctor.Name;
+            labelPacientName.Text = selectedAppointment.PatientName;
+            labelDate.Text = selectedAppointment.Date.ToString();
+            labelHour.Text = selectedAppointment.Hour.ToString();
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)
@@ -58,6 +54,36 @@ namespace MDSProject
         {
             listBoxAppointment.Items.Clear();
             listBoxAppointment.Items.AddRange(hcontainer.AppointmentSet.ToArray());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (listBoxAppointment.SelectedIndex >= 0)
+            {
+                if (selectedAppointment.Date > DateTime.Today)
+                {
+                    if (MessageBox.Show("Are you sure to cancel?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        hcontainer.AppointmentSet.Remove(selectedAppointment);
+                        hcontainer.SaveChanges();
+                        refreshListBox();
+                        limparCampos();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Impossible to take this action");
+                }
+            }
+        }
+
+        private void limparCampos()
+        {
+            selectedAppointment = null;
+            labelDoctorName.Text = "";
+            labelPacientName.Text = "";
+            labelDate.Text = "";
+            labelHour.Text = "";
         }
     }
 }

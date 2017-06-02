@@ -38,6 +38,7 @@ namespace MDSProject
             {
                 int checkout = doctorselecionado.CheckOut;
                 int checkin = doctorselecionado.CheckIn;
+                textBoxDoctorsName.Text = doctorselecionado.Name;
             }
             else if (listBoxRegisteredDoctors.SelectedIndex == -1)
             {
@@ -61,11 +62,11 @@ namespace MDSProject
             {
                 MessageBox.Show("There is already a registered appointment at this time.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }*/
-            else { 
+            else {
 
                 Appointment newAPP = new Appointment()
                 {
-                    
+                    Doctor = doctorselecionado,
                     Hour = Decimal.ToInt32(numericUpDownHoras.Value),
                     PatientName = textBoxPatientName.Text,
                     Date = dateTimePickeAppointment.Value
@@ -84,6 +85,7 @@ namespace MDSProject
 
         private void refreshdoctors()
         {
+            listBoxRegisteredDoctors.Items.Clear();
             listBoxRegisteredDoctors.Items.AddRange(container.UserSet.OfType<Doctor>().ToArray());
         }
     }

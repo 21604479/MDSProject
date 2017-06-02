@@ -33,7 +33,6 @@ namespace MDSProject
         {
             NewAppointementForm appointment = new NewAppointementForm();
             appointment.Show();
-            this.Hide();
         }
 
         private void buttonRegistDoctor_Click(object sender, EventArgs e)

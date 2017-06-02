@@ -101,8 +101,9 @@ namespace MDSProject
         private void btn_Save_Click(object sender, EventArgs e)
         { 
             Appointment appointment = (Appointment)lb_appointments.SelectedItem;
-            appointment.ConsultationDet.Diagnostic = txt_diagnosis.Text;
-            appointment.ConsultationDet.Symptoms = txt_symptoms.Text;
+            ConsultationDet condet = new ConsultationDet();
+            condet.Diagnostic = txt_diagnosis.Text;
+            condet.Symptoms = txt_symptoms.Text;
             container.SaveChanges();
         }
     }

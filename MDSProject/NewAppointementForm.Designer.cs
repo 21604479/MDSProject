@@ -40,7 +40,6 @@
             this.labelPatienceName = new System.Windows.Forms.Label();
             this.textBoxPatientName = new System.Windows.Forms.TextBox();
             this.listBoxRegisteredDoctors = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.groupBoxDoctor.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHoras)).BeginInit();
@@ -120,11 +119,6 @@
             // numericUpDownHoras
             // 
             this.numericUpDownHoras.Location = new System.Drawing.Point(242, 27);
-            this.numericUpDownHoras.Maximum = new decimal(new int[] {
-            23,
-            0,
-            0,
-            0});
             this.numericUpDownHoras.Name = "numericUpDownHoras";
             this.numericUpDownHoras.Size = new System.Drawing.Size(45, 20);
             this.numericUpDownHoras.TabIndex = 2;
@@ -156,27 +150,17 @@
             // listBoxRegisteredDoctors
             // 
             this.listBoxRegisteredDoctors.FormattingEnabled = true;
-            this.listBoxRegisteredDoctors.Location = new System.Drawing.Point(374, 69);
+            this.listBoxRegisteredDoctors.Location = new System.Drawing.Point(371, 50);
             this.listBoxRegisteredDoctors.Name = "listBoxRegisteredDoctors";
             this.listBoxRegisteredDoctors.Size = new System.Drawing.Size(120, 95);
             this.listBoxRegisteredDoctors.TabIndex = 13;
             this.listBoxRegisteredDoctors.SelectedIndexChanged += new System.EventHandler(this.listBoxRegisteredDoctors_SelectedIndexChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(371, 50);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 13);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Available Doctors";
             // 
             // NewAppointementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(499, 318);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.listBoxRegisteredDoctors);
             this.Controls.Add(this.textBoxPatientName);
             this.Controls.Add(this.labelPatienceName);
@@ -211,6 +195,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numericUpDownHoras;
         private System.Windows.Forms.ListBox listBoxRegisteredDoctors;
-        private System.Windows.Forms.Label label2;
     }
 }

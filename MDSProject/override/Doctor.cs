@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace MDSProject
 {
-     public partial class Doctor
+    using System;
+    using System.Collections.Generic;
+
+    public partial class Doctor
 {
         public override string ToString()
         {
-            return Name + " - " + Proficiency;
+            return this.Name; //+ " - " + this.Proficiency;
         }
     }
 }

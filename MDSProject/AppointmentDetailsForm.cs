@@ -45,7 +45,7 @@ namespace MDSProject
 
         private void preencherCampos()
         {
-            labelDoctorName.Text = selectedAppointment.DoctorName;
+            //labelDoctorName.Text = selectedAppointment.DoctorName;
             labelPacientName.Text = selectedAppointment.PatientName;
             labelDate.Text = selectedAppointment.Date.ToString();
             labelHour.Text = selectedAppointment.Hour.ToString();

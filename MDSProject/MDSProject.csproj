@@ -106,6 +106,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HealthITDB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="HelpDesk.cs">
+      <DependentUpon>HealthITDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="MainMenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +149,9 @@
     </Compile>
     <Compile Include="SelectDoctorForm.Designer.cs">
       <DependentUpon>SelectDoctorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>HealthITDB.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AppointmentDetailsForm.resx">
       <DependentUpon>AppointmentDetailsForm.cs</DependentUpon>

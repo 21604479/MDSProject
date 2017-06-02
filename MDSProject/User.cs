@@ -12,14 +12,10 @@ namespace MDSProject
     using System;
     using System.Collections.Generic;
     
-    public partial class Appointment
+    public partial class User
     {
         public int Id { get; set; }
-        public string PatientName { get; set; }
-        public System.DateTime Date { get; set; }
-        public int Hour { get; set; }
-    
-        public virtual Doctor Doctor { get; set; }
-        public virtual ConsultationDet ConsultationDet { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
     }
 }

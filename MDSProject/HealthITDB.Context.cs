@@ -25,8 +25,8 @@ namespace MDSProject
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Doctor> DoctorSet { get; set; }
         public virtual DbSet<Appointment> AppointmentSet { get; set; }
         public virtual DbSet<ConsultationDet> ConsultationDetSet { get; set; }
+        public virtual DbSet<User> UserSet { get; set; }
     }
 }

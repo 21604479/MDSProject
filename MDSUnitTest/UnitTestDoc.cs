@@ -1,15 +1,17 @@
-﻿+using System;
+﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MDSProject;
 
-namespace MDSUnitTest
+namespace RegistDoc.Tests
 {
-    [TestClass]
+    [TestClass()]
     public class UnitTestDoc
     {
-        [TestMethod]
-        public void Regist_doc()
+        [TestMethod()]
+        public void RegisterDoctorFormTest()
         {
-            Doctor doc = new Doctor();
+            Assert.Fail();
         }
     }
 }
+

@@ -56,7 +56,7 @@ namespace MDSProject
 
                 Appointment newAPP = new Appointment()
                 {
-                    DoctorName = textBoxDoctorsName.Text,
+                    //DoctorName = textBoxDoctorsName.Text,
                     Hour = Decimal.ToInt32(numericUpDown1.Value),
                     PatientName = textBoxPatientName.Text,
                     Date = selectdate.data

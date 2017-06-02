@@ -6,39 +6,38 @@
     <edmx:StorageModels>
     <Schema Namespace="HealthITDB.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="HealthITDBStoreContainer">
-    <EntitySet Name="DoctorSet" EntityType="HealthITDB.Store.DoctorSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="AppointmentSet" EntityType="HealthITDB.Store.AppointmentSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ConsultationDetSet" EntityType="HealthITDB.Store.ConsultationDetSet" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="AppointmentConsultationDet" Association="HealthITDB.Store.AppointmentConsultationDet">
-      <End Role="Appointment" EntitySet="AppointmentSet" />
-      <End Role="ConsultationDet" EntitySet="ConsultationDetSet" />
-    </AssociationSet>
+    <EntitySet Name="UserSet" EntityType="HealthITDB.Store.UserSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserSet_Doctor" EntityType="HealthITDB.Store.UserSet_Doctor" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserSet_HelpDesk" EntityType="HealthITDB.Store.UserSet_HelpDesk" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="DoctorAppointment" Association="HealthITDB.Store.DoctorAppointment">
-      <End Role="Doctor" EntitySet="DoctorSet" />
+      <End Role="Doctor" EntitySet="UserSet_Doctor" />
       <End Role="Appointment" EntitySet="AppointmentSet" />
+    </AssociationSet>
+    <AssociationSet Name="ConsultationDetAppointment" Association="HealthITDB.Store.ConsultationDetAppointment">
+      <End Role="ConsultationDet" EntitySet="ConsultationDetSet" />
+      <End Role="Appointment" EntitySet="AppointmentSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Doctor_inherits_User" Association="HealthITDB.Store.FK_Doctor_inherits_User">
+      <End Role="User" EntitySet="UserSet" />
+      <End Role="Doctor" EntitySet="UserSet_Doctor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HelpDesk_inherits_User" Association="HealthITDB.Store.FK_HelpDesk_inherits_User">
+      <End Role="User" EntitySet="UserSet" />
+      <End Role="HelpDesk" EntitySet="UserSet_HelpDesk" />
     </AssociationSet>
   </EntityContainer>
-  <EntityType Name="DoctorSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Proficiency" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Ssn" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="CheckIn" Type="int" Nullable="false" />
-    <Property Name="CheckOut" Type="int" Nullable="false" />
-  </EntityType>
   <EntityType Name="AppointmentSet">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="PatientName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="DoctorName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Date" Type="datetime" Nullable="false" />
     <Property Name="Hour" Type="int" Nullable="false" />
     <Property Name="Doctor_Id" Type="int" Nullable="true" />
+    <Property Name="ConsultationDet_Id" Type="int" Nullable="true" />
   </EntityType>
   <EntityType Name="ConsultationDetSet">
     <Key>
@@ -47,22 +46,37 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Symptoms" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Diagnostic" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Appointment_Id" Type="int" Nullable="true" />
   </EntityType>
-  <Association Name="AppointmentConsultationDet">
-    <End Role="Appointment" Type="HealthITDB.Store.AppointmentSet" Multiplicity="0..1" />
-    <End Role="ConsultationDet" Type="HealthITDB.Store.ConsultationDetSet" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Appointment">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="ConsultationDet">
-        <PropertyRef Name="Appointment_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
+  <EntityType Name="UserSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserSet_Doctor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Proficiency" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Ssn" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CheckIn" Type="int" Nullable="false" />
+    <Property Name="CheckOut" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserSet_HelpDesk">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CheckIn" Type="int" Nullable="false" />
+    <Property Name="CheckOut" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
   <Association Name="DoctorAppointment">
-    <End Role="Doctor" Type="HealthITDB.Store.DoctorSet" Multiplicity="0..1" />
+    <End Role="Doctor" Type="HealthITDB.Store.UserSet_Doctor" Multiplicity="0..1" />
     <End Role="Appointment" Type="HealthITDB.Store.AppointmentSet" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Doctor">
@@ -73,28 +87,64 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="ConsultationDetAppointment">
+    <End Role="ConsultationDet" Type="HealthITDB.Store.ConsultationDetSet" Multiplicity="0..1" />
+    <End Role="Appointment" Type="HealthITDB.Store.AppointmentSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ConsultationDet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Appointment">
+        <PropertyRef Name="ConsultationDet_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Doctor_inherits_User">
+    <End Role="User" Type="HealthITDB.Store.UserSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Doctor" Type="HealthITDB.Store.UserSet_Doctor" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Doctor">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HelpDesk_inherits_User">
+    <End Role="User" Type="HealthITDB.Store.UserSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="HelpDesk" Type="HealthITDB.Store.UserSet_HelpDesk" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HelpDesk">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="HealthITDB" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
         <EntityContainer Name="HealthITDBContainer1" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="DoctorSet" EntityType="HealthITDB.Doctor" />
           <EntitySet Name="AppointmentSet" EntityType="HealthITDB.Appointment" />
           <EntitySet Name="ConsultationDetSet" EntityType="HealthITDB.ConsultationDet" />
-          <AssociationSet Name="AppointmentConsultationDet" Association="HealthITDB.AppointmentConsultationDet">
-            <End Role="Appointment" EntitySet="AppointmentSet" />
-            <End Role="ConsultationDet" EntitySet="ConsultationDetSet" />
-          </AssociationSet>
+          <EntitySet Name="UserSet" EntityType="HealthITDB.User" />
           <AssociationSet Name="DoctorAppointment" Association="HealthITDB.DoctorAppointment">
-            <End Role="Doctor" EntitySet="DoctorSet" />
+            <End Role="Doctor" EntitySet="UserSet" />
+            <End Role="Appointment" EntitySet="AppointmentSet" />
+          </AssociationSet>
+          <AssociationSet Name="ConsultationDetAppointment" Association="HealthITDB.ConsultationDetAppointment">
+            <End Role="ConsultationDet" EntitySet="ConsultationDetSet" />
             <End Role="Appointment" EntitySet="AppointmentSet" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Doctor">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        <EntityType Name="Doctor" BaseType="HealthITDB.User">
           <Property Name="Name" Type="String" Nullable="false" />
           <Property Name="Proficiency" Type="String" Nullable="false" />
           <Property Name="Ssn" Type="String" Nullable="false" />
@@ -108,11 +158,10 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="PatientName" Type="String" Nullable="false" />
-          <Property Name="DoctorName" Type="String" Nullable="false" />
           <Property Name="Date" Type="DateTime" Nullable="false" />
           <Property Name="Hour" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="ConsultationDet" Relationship="HealthITDB.AppointmentConsultationDet" FromRole="Appointment" ToRole="ConsultationDet" />
           <NavigationProperty Name="Doctor" Relationship="HealthITDB.DoctorAppointment" FromRole="Appointment" ToRole="Doctor" />
+          <NavigationProperty Name="ConsultationDet" Relationship="HealthITDB.ConsultationDetAppointment" FromRole="Appointment" ToRole="ConsultationDet" />
         </EntityType>
         <EntityType Name="ConsultationDet">
           <Key>
@@ -121,15 +170,28 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Symptoms" Type="String" Nullable="false" />
           <Property Name="Diagnostic" Type="String" Nullable="false" />
-          <NavigationProperty Name="Appointment" Relationship="HealthITDB.AppointmentConsultationDet" FromRole="ConsultationDet" ToRole="Appointment" />
+          <NavigationProperty Name="Appointment" Relationship="HealthITDB.ConsultationDetAppointment" FromRole="ConsultationDet" ToRole="Appointment" />
         </EntityType>
-        <Association Name="AppointmentConsultationDet">
-          <End Type="HealthITDB.Appointment" Role="Appointment" Multiplicity="0..1" />
-          <End Type="HealthITDB.ConsultationDet" Role="ConsultationDet" Multiplicity="0..1" />
-        </Association>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HelpDesk" BaseType="HealthITDB.User" >
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="CheckIn" Type="Int32" Nullable="false" />
+          <Property Name="CheckOut" Type="Int32" Nullable="false" />
+        </EntityType>
         <Association Name="DoctorAppointment">
           <End Type="HealthITDB.Doctor" Role="Doctor" Multiplicity="0..1" />
           <End Type="HealthITDB.Appointment" Role="Appointment" Multiplicity="*" />
+        </Association>
+        <Association Name="ConsultationDetAppointment">
+          <End Type="HealthITDB.ConsultationDet" Role="ConsultationDet" Multiplicity="0..1" />
+          <End Type="HealthITDB.Appointment" Role="Appointment" Multiplicity="0..1" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -137,24 +199,11 @@
     <edmx:Mappings>
     <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="HealthITDBStoreContainer" CdmEntityContainer="HealthITDBContainer1">
-    <EntitySetMapping Name="DoctorSet">
-      <EntityTypeMapping TypeName="IsTypeOf(HealthITDB.Doctor)">
-        <MappingFragment StoreEntitySet="DoctorSet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Proficiency" ColumnName="Proficiency" />
-          <ScalarProperty Name="Ssn" ColumnName="Ssn" />
-          <ScalarProperty Name="CheckIn" ColumnName="CheckIn" />
-          <ScalarProperty Name="CheckOut" ColumnName="CheckOut" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="AppointmentSet">
       <EntityTypeMapping TypeName="IsTypeOf(HealthITDB.Appointment)">
         <MappingFragment StoreEntitySet="AppointmentSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="PatientName" ColumnName="PatientName" />
-          <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
           <ScalarProperty Name="Date" ColumnName="Date" />
           <ScalarProperty Name="Hour" ColumnName="Hour" />
         </MappingFragment>
@@ -169,15 +218,33 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="AppointmentConsultationDet" TypeName="HealthITDB.AppointmentConsultationDet" StoreEntitySet="ConsultationDetSet">
-      <EndProperty Name="Appointment">
-        <ScalarProperty Name="Id" ColumnName="Appointment_Id" />
-      </EndProperty>
-      <EndProperty Name="ConsultationDet">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-      <Condition ColumnName="Appointment_Id" IsNull="false" />
-    </AssociationSetMapping>
+    <EntitySetMapping Name="UserSet">
+      <EntityTypeMapping TypeName="IsTypeOf(HealthITDB.User)">
+        <MappingFragment StoreEntitySet="UserSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(HealthITDB.Doctor)">
+        <MappingFragment StoreEntitySet="UserSet_Doctor">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Proficiency" ColumnName="Proficiency" />
+          <ScalarProperty Name="Ssn" ColumnName="Ssn" />
+          <ScalarProperty Name="CheckIn" ColumnName="CheckIn" />
+          <ScalarProperty Name="CheckOut" ColumnName="CheckOut" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(HealthITDB.HelpDesk)">
+        <MappingFragment StoreEntitySet="UserSet_HelpDesk">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CheckIn" ColumnName="CheckIn" />
+          <ScalarProperty Name="CheckOut" ColumnName="CheckOut" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <AssociationSetMapping Name="DoctorAppointment" TypeName="HealthITDB.DoctorAppointment" StoreEntitySet="AppointmentSet">
       <EndProperty Name="Doctor">
         <ScalarProperty Name="Id" ColumnName="Doctor_Id" />
@@ -186,6 +253,15 @@
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
       <Condition ColumnName="Doctor_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ConsultationDetAppointment" TypeName="HealthITDB.ConsultationDetAppointment" StoreEntitySet="AppointmentSet">
+      <EndProperty Name="ConsultationDet">
+        <ScalarProperty Name="Id" ColumnName="ConsultationDet_Id" />
+      </EndProperty>
+      <EndProperty Name="Appointment">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="ConsultationDet_Id" IsNull="false" />
     </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>

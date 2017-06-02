@@ -20,6 +20,9 @@ namespace MDSProject
             InitializeComponent();
 
             container = new HealthITDBContainer1();
+
+            refreshDoc();
+
         }
 
         //public DoctorDet newDoctor;
@@ -39,6 +42,30 @@ namespace MDSProject
             {
                 MessageBox.Show("Invalid SSN", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            else if (numericUpDownCheckOut.Value <= numericUpDownCheckIn.Value)
+            {
+                MessageBox.Show("A doctor can't check out before check in", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            else if ( listBoxDoctors.SelectedIndex != -1)
+                {
+
+                Doctor selectDoctor = (Doctor)listBoxDoctors.SelectedItem;
+
+                selectDoctor.Name = textBoxName.Text;
+                selectDoctor.Proficiency = comboBoxProficiency.Text;
+                selectDoctor.Ssn = textBoxSSN.Text;
+                selectDoctor.CheckIn = decimal.ToInt32(numericUpDownCheckIn.Value);
+                selectDoctor.CheckOut = decimal.ToInt32(numericUpDownCheckOut.Value);
+
+                container.SaveChanges();
+                refreshDoc();
+
+                clearInfo();
+
+                buttonRegister.Text = "Register";
+            }
+
             else
             {
                 Doctor newDoctor = new Doctor()
@@ -53,6 +80,8 @@ namespace MDSProject
                 container.DoctorSet.Add(newDoctor);
                 container.SaveChanges();
                 refreshDoc();
+
+                clearInfo();
             }
         }
 
@@ -60,6 +89,55 @@ namespace MDSProject
         {
             listBoxDoctors.Items.Clear();
             listBoxDoctors.Items.AddRange(container.DoctorSet.ToArray());
+        }
+
+        private void buttonNew_Click(object sender, EventArgs e)
+        {
+            clearInfo();
+        }
+
+        private void clearInfo()
+        {
+            buttonRegister.Text = "Register";
+            textBoxName.Clear();
+            textBoxSSN.Clear();
+            comboBoxProficiency.SelectedIndex = -1;
+            numericUpDownCheckIn.Value = 0;
+            numericUpDownCheckOut.Value = 8;
+
+            listBoxDoctors.SelectedIndex = -1;
+        }
+
+        private void listBoxDoctors_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Doctor selectDoctor = (Doctor)listBoxDoctors.SelectedItem;
+
+            if (selectDoctor != null)
+            {
+                buttonRegister.Text = "Save";
+
+                textBoxName.Text = selectDoctor.Name;
+                textBoxSSN.Text = selectDoctor.Ssn;
+                comboBoxProficiency.Text = selectDoctor.Proficiency;
+                numericUpDownCheckIn.Value = selectDoctor.CheckIn;
+                numericUpDownCheckOut.Value = selectDoctor.CheckOut;
+            }
+            else if (selectDoctor == null)
+            {
+                buttonRegister.Text = "Register";
+            }
+        }
+
+        private void textBoxSSN_TextChanged(object sender, EventArgs e)
+        {
+            textBoxSSN.MaxLength = 9;
+
+            double parsedValue;
+
+            if (!double.TryParse(textBoxSSN.Text, out parsedValue))
+            {
+                textBoxSSN.Text = "";
+            }
         }
     }
 }

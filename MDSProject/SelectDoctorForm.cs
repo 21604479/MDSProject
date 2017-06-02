@@ -12,9 +12,13 @@ namespace MDSProject
 {
     public partial class SelectDoctorForm : Form
     {
+        HealthITDBContainer1 container = new HealthITDBContainer1();
+
         public SelectDoctorForm()
         {
             InitializeComponent();
+
+            refreshdoctors();
         }
 
         public string selectedDoctor
@@ -39,6 +43,11 @@ namespace MDSProject
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();  
+        }
+
+        private void refreshdoctors()
+        {
+            listBoxRegisteredDoctors.Items.AddRange(container.DoctorSet.ToArray());
         }
     }
 }

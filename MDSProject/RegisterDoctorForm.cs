@@ -54,7 +54,7 @@ namespace MDSProject
             else if ( listBoxDoctors.SelectedIndex != -1)
                 {
 
-                DialogResult result = MessageBox.Show("Are you sure you want to save?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show("Are you sure you want to save?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
                 {
@@ -72,6 +72,8 @@ namespace MDSProject
                     clearInfo();
 
                     buttonRegister.Text = "Register";
+
+                    MessageBox.Show("Data saved with success!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }
@@ -92,6 +94,8 @@ namespace MDSProject
                 container.UserSet.Add(NewDoctor);
                 container.SaveChanges();
                 refreshDoc();
+
+                MessageBox.Show("Doctor registered with success", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 clearInfo();
             }

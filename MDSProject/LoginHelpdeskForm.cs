@@ -46,5 +46,13 @@ namespace MDSProject
                 MessageBox.Show("Invalid Login!"); ;
             }
         }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            MenuLoginForm form = new MenuLoginForm();
+            form.Show();
+
+            Close();
+        }
     }
 }

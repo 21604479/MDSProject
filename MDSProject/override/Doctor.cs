@@ -13,7 +13,7 @@ namespace MDSProject
 {
         public override string ToString()
         {
-            return this.Name; //+ " - " + this.Proficiency;
+            return Name + " - " + Proficiency;
         }
     }
 }

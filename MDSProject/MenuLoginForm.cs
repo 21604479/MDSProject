@@ -20,13 +20,17 @@ namespace MDSProject
         private void button1_Click(object sender, EventArgs e)
         {
             LoginDoctorForm newForm = new LoginDoctorForm();
-            newForm.ShowDialog();
+            newForm.Show();
+
+            Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             LoginHelpdeskForm newForm = new LoginHelpdeskForm();
-            newForm.ShowDialog();
+            newForm.Show();
+
+            Hide();
         }
     }
 }

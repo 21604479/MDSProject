@@ -154,7 +154,7 @@
             this.textBoxDateTime.Location = new System.Drawing.Point(11, 21);
             this.textBoxDateTime.Name = "textBoxDateTime";
             this.textBoxDateTime.ReadOnly = true;
-            this.textBoxDateTime.Size = new System.Drawing.Size(94, 13);
+            this.textBoxDateTime.Size = new System.Drawing.Size(146, 13);
             this.textBoxDateTime.TabIndex = 14;
             // 
             // labelPatienceName

@@ -62,11 +62,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(467, 9);
+            this.label1.Location = new System.Drawing.Point(472, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(236, 25);
+            this.label1.Size = new System.Drawing.Size(224, 25);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Concsultation Details";
+            this.label1.Text = "Consultation Details";
             // 
             // textBox1
             // 

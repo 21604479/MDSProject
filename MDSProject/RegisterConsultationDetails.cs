@@ -76,5 +76,13 @@ namespace MDSProject
         {
 
         }
+
+        private void txt_symptoms_TextChanged(object sender, EventArgs e)
+        {
+            if(txt_diagnosis.Text.Length > 0 && txt_symptoms.Text.Length > 0)
+            {
+                btn_Save.Enabled = true;
+            }
+        }
     }
 }

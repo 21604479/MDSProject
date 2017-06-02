@@ -78,7 +78,7 @@
             // 
             // btn_cancel
             // 
-            this.btn_cancel.Location = new System.Drawing.Point(646, 414);
+            this.btn_cancel.Location = new System.Drawing.Point(646, 439);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(135, 32);
             this.btn_cancel.TabIndex = 8;
@@ -105,6 +105,7 @@
             this.txt_symptoms.Name = "txt_symptoms";
             this.txt_symptoms.Size = new System.Drawing.Size(408, 73);
             this.txt_symptoms.TabIndex = 11;
+            this.txt_symptoms.TextChanged += new System.EventHandler(this.txt_symptoms_TextChanged);
             // 
             // txt_diagnosis
             // 
@@ -118,7 +119,7 @@
             // btn_Save
             // 
             this.btn_Save.Enabled = false;
-            this.btn_Save.Location = new System.Drawing.Point(505, 414);
+            this.btn_Save.Location = new System.Drawing.Point(505, 439);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(135, 32);
             this.btn_Save.TabIndex = 14;

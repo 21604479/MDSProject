@@ -58,9 +58,6 @@
             // listBoxRegisteredDoctors
             // 
             this.listBoxRegisteredDoctors.FormattingEnabled = true;
-            this.listBoxRegisteredDoctors.Items.AddRange(new object[] {
-            "Jesualdo Manuel Gomes",
-            "Joaquim Ribeiro Manuel"});
             this.listBoxRegisteredDoctors.Location = new System.Drawing.Point(15, 63);
             this.listBoxRegisteredDoctors.Name = "listBoxRegisteredDoctors";
             this.listBoxRegisteredDoctors.Size = new System.Drawing.Size(191, 95);

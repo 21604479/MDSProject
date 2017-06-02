@@ -46,7 +46,7 @@ namespace MDSProject
 
         private void buttonConfirm_Click(object sender, EventArgs e)
         {
-            if (textBoxDoctorsName.Text.Length == 0 || /*textBoxDateTime.Text.Length == 0 ||*/ textBoxPatientName.Text.Length == 0)
+            if (textBoxDoctorsName.Text.Length == 0 || textBoxDateTime.Text.Length == 0 || numericUpDown1.Value == 0 || textBoxPatientName.Text.Length == 0)
             {
                 MessageBox.Show("Fill the blank spaces, Please.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }

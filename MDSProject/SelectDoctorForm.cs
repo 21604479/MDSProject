@@ -33,7 +33,10 @@ namespace MDSProject
         {
 
             if (listBoxRegisteredDoctors.SelectedIndex == -1)
+            {
+                MessageBox.Show("No doctor was selected.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
+            }
 
             this.DialogResult = DialogResult.OK;
             this.Close();

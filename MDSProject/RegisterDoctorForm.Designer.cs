@@ -46,6 +46,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.buttonNew = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBoxUsername = new System.Windows.Forms.TextBox();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCheckIn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCheckOut)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -64,7 +68,7 @@
             // 
             // buttonRegister
             // 
-            this.buttonRegister.Location = new System.Drawing.Point(235, 245);
+            this.buttonRegister.Location = new System.Drawing.Point(235, 319);
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.Size = new System.Drawing.Size(80, 30);
             this.buttonRegister.TabIndex = 8;
@@ -74,7 +78,7 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(468, 245);
+            this.buttonCancel.Location = new System.Drawing.Point(468, 319);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(80, 30);
             this.buttonCancel.TabIndex = 9;
@@ -112,7 +116,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(253, 207);
+            this.label4.Location = new System.Drawing.Point(253, 290);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 13;
@@ -121,7 +125,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(400, 207);
+            this.label5.Location = new System.Drawing.Point(400, 290);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 13);
             this.label5.TabIndex = 14;
@@ -144,7 +148,7 @@
             // 
             // numericUpDownCheckIn
             // 
-            this.numericUpDownCheckIn.Location = new System.Drawing.Point(318, 205);
+            this.numericUpDownCheckIn.Location = new System.Drawing.Point(318, 288);
             this.numericUpDownCheckIn.Maximum = new decimal(new int[] {
             23,
             0,
@@ -156,7 +160,7 @@
             // 
             // numericUpDownCheckOut
             // 
-            this.numericUpDownCheckOut.Location = new System.Drawing.Point(465, 205);
+            this.numericUpDownCheckOut.Location = new System.Drawing.Point(465, 288);
             this.numericUpDownCheckOut.Maximum = new decimal(new int[] {
             23,
             0,
@@ -186,7 +190,7 @@
             this.listBoxDoctors.FormattingEnabled = true;
             this.listBoxDoctors.Location = new System.Drawing.Point(6, 21);
             this.listBoxDoctors.Name = "listBoxDoctors";
-            this.listBoxDoctors.Size = new System.Drawing.Size(193, 251);
+            this.listBoxDoctors.Size = new System.Drawing.Size(193, 316);
             this.listBoxDoctors.TabIndex = 21;
             this.listBoxDoctors.SelectedIndexChanged += new System.EventHandler(this.listBoxDoctors_SelectedIndexChanged);
             // 
@@ -195,7 +199,7 @@
             this.groupBox1.Controls.Add(this.listBoxDoctors);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(205, 282);
+            this.groupBox1.Size = new System.Drawing.Size(205, 341);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Existing Doctors";
@@ -203,7 +207,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(366, 207);
+            this.label6.Location = new System.Drawing.Point(366, 290);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(15, 13);
             this.label6.TabIndex = 24;
@@ -212,7 +216,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(513, 207);
+            this.label7.Location = new System.Drawing.Point(513, 290);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(15, 13);
             this.label7.TabIndex = 25;
@@ -220,7 +224,7 @@
             // 
             // buttonNew
             // 
-            this.buttonNew.Location = new System.Drawing.Point(356, 245);
+            this.buttonNew.Location = new System.Drawing.Point(356, 319);
             this.buttonNew.Name = "buttonNew";
             this.buttonNew.Size = new System.Drawing.Size(80, 30);
             this.buttonNew.TabIndex = 26;
@@ -228,11 +232,48 @@
             this.buttonNew.UseVisualStyleBackColor = true;
             this.buttonNew.Click += new System.EventHandler(this.buttonNew_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(223, 210);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(58, 13);
+            this.label8.TabIndex = 27;
+            this.label8.Text = "Username:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(223, 249);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(56, 13);
+            this.label9.TabIndex = 28;
+            this.label9.Text = "Password:";
+            // 
+            // textBoxUsername
+            // 
+            this.textBoxUsername.Location = new System.Drawing.Point(287, 207);
+            this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.Size = new System.Drawing.Size(254, 20);
+            this.textBoxUsername.TabIndex = 29;
+            // 
+            // textBoxPassword
+            // 
+            this.textBoxPassword.Location = new System.Drawing.Point(287, 246);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '*';
+            this.textBoxPassword.Size = new System.Drawing.Size(254, 20);
+            this.textBoxPassword.TabIndex = 30;
+            // 
             // RegisterDoctorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 297);
+            this.ClientSize = new System.Drawing.Size(560, 365);
+            this.Controls.Add(this.textBoxPassword);
+            this.Controls.Add(this.textBoxUsername);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.buttonNew);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -280,5 +321,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button buttonNew;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBoxUsername;
+        private System.Windows.Forms.TextBox textBoxPassword;
     }
 }

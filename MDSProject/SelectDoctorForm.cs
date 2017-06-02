@@ -50,7 +50,7 @@ namespace MDSProject
 
         private void refreshdoctors()
         {
-            listBoxRegisteredDoctors.Items.AddRange(container.DoctorSet.ToArray());
+            listBoxRegisteredDoctors.Items.AddRange(container.UserSet.OfType<Doctor>().ToArray());
         }
     }
 }
